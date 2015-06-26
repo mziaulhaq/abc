@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EcommerceManager.Master.cs" Inherits="Ecommerce.EcommerceManager.EcommerceManager" %>
+<%@ Register src="UserControls/CtrlTopMenu.ascx" tagname="CtrlTopMenu" tagprefix="uc1" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>     
+    <%--<webopt:BundleReference ID="BootstrpCss" runat="server" Path="~/Content/bootstrap.min.css" />--%> 
+    <webopt:BundleReference runat="server" Path="~/Content/Manager" /> 
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" /> 
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+        
+ <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+     
+      <Scripts>
+          <asp:ScriptReference Name="jquery" />
+          <asp:ScriptReference Name="jquery.ui.combined" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/DetailsView.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/Focus.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/GridView.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/Menu.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/MenuStandards.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/TreeView.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/WebForms.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/WebParts.js" />
+          <asp:ScriptReference Path="~/Scripts/WebForms/WebUIValidation.js" />
+          <asp:ScriptReference Path="~/Scripts/bootstrap.min.js"/>
+          <asp:ScriptReference Path="~/Scripts/jquery.dcmegamenu.1.3.3.js"/>
+          <asp:ScriptReference  Path="~/Scripts/jquery.hoverIntent.minified.js"/>
+          <asp:ScriptReference Path="~/Scripts/DynamicMessages.js" />
+          </Scripts>
+ </ajaxToolkit:ToolkitScriptManager>
+
+ 
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    <a runat="server" href="~/">your logo here</a>
+                </p>
+            </div>
+            <asp:HyperLink runat="server" ID="hlLogout" Text="Logout" ImageUrl="~/Images/logout.gif" style="float: right" NavigateUrl="~/EcommerceManager/EcomerceHome?cmd=logout"></asp:HyperLink>
+        </div>
+    </header>
+      
+              <nav>
+                 <uc1:CtrlTopMenu ID="CtrlTopMenu1" runat="server" />
+              </nav>
+       
+        <div class="clear-fix"></div>
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <asp:UpdatePanel ID="MainPanel" runat="server" RenderMode="Inline">
+            <ContentTemplate>
+             <section class="content-wrapper main-content clear-fix">
+               
+            <asp:ContentPlaceHolder runat="server" ID="MainContent"/>
+        </section>     
+            </ContentTemplate>
+          
+         </asp:UpdatePanel>
+        <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+            <ProgressTemplate>
+                <div id="divUpdateProgress" style="display: none">
+                <img id="imgUpdateProgress" src="../Images/updateProgress.gif"/>
+                </div>
+            </ProgressTemplate>
+            
+        </asp:UpdateProgress>
+        
+    </div>
+    <footer>
+        <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; <%= DateTime.Now.Year %> - Lahore Cloth </p>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script type="text/javascript">
+        $("#divUpdateProgress").css("display", "block");
+        $('#TopMyMenuControl  ul').addClass("mega-menu");
+        $('#TopMyMenuControl  ul').attr("id", "mega-menu");
+        $('#TopMyMenuControl  a[href="#"]').css("cursor", "context-menu !important");
+        $('#TopMyMenuControl a[href="#"]').removeAttr("onclick");
+        $('#TopMyMenuControl a[href="#"]').click(function (e) {
+            e.preventDefault();
+        });
+        jQuery(document).ready(function ($) {
+            jQuery('#mega-menu').dcMegaMenu();
+        });
+
+    </script>
+</body>
+</html>

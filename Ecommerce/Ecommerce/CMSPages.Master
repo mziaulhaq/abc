@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CMSPages.Master.cs" Inherits="Ecommerce.CMSPages" %>
+
+<%@ Register Src="~/UserControls/HeaderMenu.ascx" TagPrefix="uc1" TagName="HeaderMenu" %>
+ <%@ Register Src="~/UserControls/UserControlScripts.ascx" TagPrefix="uc1" TagName="UserControlScripts" %>
+<%@ Register Src="~/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+
+    </asp:PlaceHolder>
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" /> 
+    <webopt:BundleReference ID="BundleReference2" runat="server" Path="~/Content/slimbox/" /> 
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet"/>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+   
+</head>
+<body>
+    <form runat="server">
+     <uc1:UserControlScripts runat="server" id="UserControlScripts" />
+     <div class="container-fluid">
+            <header>
+            <uc1:HeaderMenu runat="server" ID="HeaderMenu" />
+        </header>
+        
+        <section class="clearall row-fluid whitebackground paddingtwentyTop">
+        <article class="offset1 well contentArticle span10">
+             <asp:ContentPlaceHolder runat="server" ID="Contents"></asp:ContentPlaceHolder>
+          
+        </article>
+        <div class="clearall"></div>
+    </section>
+   
+    </div>
+        <uc1:CtrlFooter runat="server" ID="CtrlFooter" />
+    </form>
+</body>
+</html>

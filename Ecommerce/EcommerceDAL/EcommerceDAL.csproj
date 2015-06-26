@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE1BBAB9-A242-4488-BDE5-5DDC9B38C780}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcommerceDAL</RootNamespace>
+    <AssemblyName>EcommerceDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrandsToUserInformation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BrandsUpdateInformation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Colors.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessMethods\Category.cs" />
+    <Compile Include="DynamicCategories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Genders.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderInfoList.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersInfo.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatusCustomer.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDynamicCategories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductToCategories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReportByDate.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReportByDateForDownload.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReportByProduct.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReportByProductForDownload.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Screens.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchProduct.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_AdvanceSearch_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Categories_GetAllActiveCategories_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Categories_GetAllActiveCategories_Result1.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetCustomerInfo_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetStoreInformation_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetSubmittedtOrdersByOrderId_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetSubmittedtOrders_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetSubmittedtOrders_Result1.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Materials_GetAllMaterialsNotBindToProduct_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_OrderStatus_Customer_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ProductSearchFront_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ProductSearch_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReturnBrandsWithNoOfProducts_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReturnColorsWithNoOfProducts_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReturnGenderWithNoOfProducts_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReturnMetarialWithNoOfProducts_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReturnTypeWithNoOfProducts_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_SearchProduct_Result.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreInformation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StrongTypedClasses\CategoriesInformation.cs" />
+    <Compile Include="EcommerceDAL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcommerceDAL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EcommerceDAL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EcommerceDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcommerceDAL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubbmittedtOrders.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BillingTerm.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Brands.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BrandsUpdation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Categories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CategoriesUpdationRecord.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Colors.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Country.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Customers.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_GenderCategories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Groups.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HomePageBanners.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Metarial.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_NextStorePaymentSchedule.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Orders.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_OrdersUpdation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Packages.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Pages.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PagesUpdation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PaymentMethods.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductCategories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductDynamicAttributes.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductDynamicCategories.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductImages.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductMetarialInfo.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Products.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductsColors.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ProductsGender.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_SalesTaxRates.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_SalesTaxRatesUpdation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Screens.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ScreensToGroup.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_StorePayment.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Stores.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Templates.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Users.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UsersUpdation.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersInfo.cs">
+      <DependentUpon>EcommerceDAL.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EcommerceDAL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EcommerceDAL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EcommerceDAL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EcommerceDAL.edmx</DependentUpon>
+      <LastGenOutput>EcommerceDAL.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EcommerceDAL.edmx.diagram">
+      <DependentUpon>EcommerceDAL.edmx</DependentUpon>
+    </None>
+    <None Include="EcommerceDAL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EcommerceDAL.edmx</DependentUpon>
+      <LastGenOutput>EcommerceDAL.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

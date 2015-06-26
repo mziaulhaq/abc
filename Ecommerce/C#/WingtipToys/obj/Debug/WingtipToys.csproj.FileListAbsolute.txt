@@ -1,0 +1,27 @@
+G:\projects\MyEcommerce\Ecommerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll.config
+G:\projects\MyEcommerce\Ecommerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll
+G:\projects\MyEcommerce\Ecommerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.pdb
+G:\projects\MyEcommerce\Ecommerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.csprojResolveAssemblyReference.cache
+G:\projects\MyEcommerce\Ecommerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.dll
+G:\projects\MyEcommerce\Ecommerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.pdb
+G:\projects\MyEcommerce Before Template\Ecommerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll
+G:\projects\MyEcommerce Before Template\Ecommerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.pdb
+G:\projects\MyEcommerce Before Template\Ecommerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.dll
+G:\projects\MyEcommerce Before Template\Ecommerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll.config
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\C#\WingtipToys\bin\WingtipToys.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.csprojResolveAssemblyReference.cache
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.pdb
+G:\projects\EcommerceLast\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll
+G:\projects\EcommerceLast\Ecommerce\C#\WingtipToys\bin\WingtipToys.pdb
+G:\projects\EcommerceLast\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.csprojResolveAssemblyReference.cache
+G:\projects\EcommerceLast\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.dll
+G:\projects\EcommerceLast\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll.config
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\C#\WingtipToys\bin\WingtipToys.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\C#\WingtipToys\bin\WingtipToys.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\C#\WingtipToys\obj\Debug\WingtipToys.csprojResolveAssemblyReference.cache

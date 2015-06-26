@@ -1,0 +1,36 @@
+﻿ul.thumbnails li {
+    float: left;
+    list-style: none;
+}
+
+
+    ul.thumbnails li article img {
+        width: 200px;
+        height: 220px;
+        border: 1px solid !important;
+        margin-left: 25px;
+    }
+
+
+    ul.thumbnails li div input {
+        margin-left: 70px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+fieldset table.mytable tr td label {
+    margin-left: 25px;
+    display: inline;
+    font-size: 14px;
+}
+
+.legendStyle {
+    padding: 15px ;
+    font-size: 24px ;
+    display: block;
+}
+
+
+div fieldset table.mytable tr td:first-child {
+    width: 110px;
+} 

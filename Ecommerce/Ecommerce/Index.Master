@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.Master.cs" Inherits="Ecommerce.IndexMaster" %>
+<%@ Register Src="~/UserControls/HeaderMenu.ascx" TagPrefix="uc1" TagName="HeaderMenu" %>
+<%@ Register Src="~/UserControls/UserControlScripts.ascx" TagPrefix="uc1" TagName="UserControlScripts" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+
+    </asp:PlaceHolder>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/jquery.bxslider.css" rel="stylesheet" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" /> 
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    
+    <form runat="server">
+        <uc1:UserControlScripts runat="server" id="UserControlScripts" />
+
+        <div class="container-fluid">
+            <header>
+                <uc1:HeaderMenu runat="server" id="HeaderMenu" />
+
+                <div class="row-fluid">
+                    <div class="navbar well span10 offset1 hidden-phone Featuredheader">
+                        <div id="myCarousel" class="carousel">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <asp:ListView runat="server"  ID="lstcarousel">
+                                    <ItemTemplate>
+                                        <div class="item">
+                                            <asp:HyperLink runat="server" ID="hypLinkBanner" NavigateUrl='<%# string.Format("~/ProductDetail?PId={0}",Eval("ProductId").ToString()) %>' >
+                                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# BindBannerImages(Eval("BannerImage").ToString()) %>' AlternateText="BannerImage" CssClass="table-bordered" />
+                                            </asp:HyperLink>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:ListView>
+                            </div>
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                            </div>
+                        </div>
+                        <div class="clearall"></div>
+
+                    </div>
+            </header>
+            <asp:ContentPlaceHolder runat="server" ID="Contents"></asp:ContentPlaceHolder>
+        </div>
+        
+        <script type="text/javascript">
+            $('.carousel').carousel({
+                interval: 5000,
+                auto: true
+            });
+            $('.carousel-inner > div:first-child').addClass("active");
+          
+                //Handles menu drop down
+           
+           
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="2E0F6BD8-ADE8-4433-92AB-452BA2DED361" ModuleId="Ecommerce" />
+  <Module PersistentId="BE1BBAB9-A242-4488-BDE5-5DDC9B38C780" ModuleId="EcommerceDAL" />
+  <Module PersistentId="122B85B3-4FA9-4153-92D2-500F6318A28B" ModuleId="EcommerceUtilities" />
+  <Module PersistentId="9C95310D-1C77-46F0-9541-C54F39C80D46" ModuleId="MenuControl" />
+</Modules>

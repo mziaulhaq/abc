@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="Ecommerce.MasterPages.Electronix.Index" %>
+
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlTopSearch.ascx" TagPrefix="uc1" TagName="CtrlTopSearch" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlHeader.ascx" TagPrefix="uc1" TagName="CtrlHeader" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlMenu.ascx" TagPrefix="uc1" TagName="CtrlMenu" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlNavigation.ascx" TagPrefix="uc1" TagName="CtrlNavigation" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlCategories.ascx" TagPrefix="uc1" TagName="CtrlCategories" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlSpecialProduct.ascx" TagPrefix="uc1" TagName="CtrlSpecialProduct" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlNewsLetter.ascx" TagPrefix="uc1" TagName="CtrlNewsLetter" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlShoppingCart.ascx" TagPrefix="uc1" TagName="CtrlShoppingCart" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlWhatsNew.ascx" TagPrefix="uc1" TagName="CtrlWhatsNew" %>
+<%@ Register Src="~/MasterPages/Electronix/UserControls/CtrlManufacturers.ascx" TagPrefix="uc1" TagName="CtrlManufacturers" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <webopt:BundleReference runat="server" Path="~/MasterPages/Electronix/css/"></webopt:BundleReference>
+    <asp:ScriptReference runat="server" Path="~/MasterPages/Electronix/js/boxOver.js"/>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+      <div id="main_container">
+  <div class="top_bar">
+      <uc1:CtrlTopSearch runat="server" id="CtrlTopSearch" />
+  </div>
+          <uc1:CtrlHeader runat="server" id="CtrlHeader" />
+
+          <div id="main_content">
+              <uc1:CtrlMenu runat="server" id="CtrlMenu" />
+
+              <!-- end of menu tab -->
+              <uc1:CtrlNavigation runat="server" id="CtrlNavigation" />
+
+              <div class="left_content">
+                  <uc1:CtrlCategories runat="server" id="CtrlCategories" />
+
+                  <uc1:CtrlSpecialProduct runat="server" id="CtrlSpecialProduct" />
+
+                  <uc1:CtrlNewsLetter runat="server" id="CtrlNewsLetter" />
+                  </div>
+                  <!-- end of left content -->
+    <div class="center_content">
+        <asp:ContentPlaceHolder runat="server" ID="Contents"></asp:ContentPlaceHolder>
+    </div>
+    <!-- end of center content -->
+    <div class="right_content">
+        <uc1:CtrlShoppingCart runat="server" id="CtrlShoppingCart" />
+
+        <div class="title_box">What’s new</div>
+        <uc1:CtrlWhatsNew runat="server" id="CtrlWhatsNew" />
+
+        <div class="title_box">Manufacturers</div>
+        <uc1:CtrlManufacturers runat="server" id="CtrlManufacturers" />
+
+        <div class="banner_adds"> <a href="#"><img src="images/bann1.jpg" alt="" border="0" /></a> </div>
+    </div>
+    <!-- end of right content -->
+  </div>
+  <!-- end of main content -->
+          <uc1:ctrlfooter runat="server" id="CtrlFooter" />
+
+      </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,1628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClothModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_BillingTerm">
+    <Key>
+      <PropertyRef Name="BTId" />
+    </Key>
+    <Property Name="BTId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BTTitle" Type="varchar(max)" Nullable="false" />
+    <Property Name="BTBill" Type="money" Nullable="false" />
+    <Property Name="BTDuration" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Brands">
+    <Key>
+      <PropertyRef Name="BrandId" />
+    </Key>
+    <Property Name="BrandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="BrandDescription" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="BrandUploadedDate" Type="datetime" Nullable="false" />
+    <Property Name="BrandUploadedBy" Type="int" Nullable="false" />
+    <Property Name="BrandLastUpdatedBy" Type="int" />
+    <Property Name="BrandLastUpdatedDate" Type="datetime" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="BrandImage" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_BrandsUpdation">
+    <Key>
+      <PropertyRef Name="BrandUpdationId" />
+    </Key>
+    <Property Name="BrandUpdationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandId" Type="int" Nullable="false" />
+    <Property Name="BrandDescription" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="BrandsModifiedBy" Type="int" Nullable="false" />
+    <Property Name="BrandsModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="BrandName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="BrandImage" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_Categories">
+    <Key>
+      <PropertyRef Name="CatId" />
+    </Key>
+    <Property Name="CatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CatDescription" Type="varchar" MaxLength="500" />
+    <Property Name="CatParent" Type="int" />
+    <Property Name="CatIsActive" Type="bit" Nullable="false" />
+    <Property Name="CatCreatedBy" Type="int" Nullable="false" />
+    <Property Name="CatCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CatLastModifiedBy" Type="int" />
+    <Property Name="CatLastModifiedDate" Type="datetime" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="ShowOrder" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_CategoriesUpdationRecord">
+    <Key>
+      <PropertyRef Name="CatUpdationRecord" />
+    </Key>
+    <Property Name="CatUpdationRecord" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatId" Type="int" Nullable="false" />
+    <Property Name="CatName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CatDescription" Type="varchar" MaxLength="500" />
+    <Property Name="CatParent" Type="bigint" />
+    <Property Name="CatIsActive" Type="bit" Nullable="false" />
+    <Property Name="CatModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="CatModifiedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColorName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ColorCode" Type="varchar" MaxLength="50" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tbl_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Pwd" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TelephoneNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="ProvinceOrState" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="RegistrationDate" Type="datetime" />
+    <Property Name="IpAddress" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_GenderCategories">
+    <Key>
+      <PropertyRef Name="GenderCatId" />
+    </Key>
+    <Property Name="GenderCatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderCatName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GenderCatDescription" Type="varchar" MaxLength="500" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Groups">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupDescription" Type="varchar" MaxLength="500" />
+    <Property Name="GroupCreatedBy" Type="int" Nullable="false" />
+    <Property Name="GroupCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_HomePageBanners">
+    <Key>
+      <PropertyRef Name="HPBId" />
+    </Key>
+    <Property Name="HPBId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BannerImage" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="BannerOrder" Type="int" Nullable="false" />
+    <Property Name="LinkPath" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_Metarial">
+    <Key>
+      <PropertyRef Name="meterialId" />
+    </Key>
+    <Property Name="meterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="meterialName" Type="varchar" MaxLength="50" />
+    <Property Name="meterialDescription" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_NextStorePaymentSchedule">
+    <Key>
+      <PropertyRef Name="NextPSId" />
+    </Key>
+    <Property Name="NextPSId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="ScheduleDate" Type="date" Nullable="false" />
+    <Property Name="InsertionDate" Type="date" Nullable="false" />
+    <Property Name="InsertedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="CustomerId" Type="bigint" Nullable="false" />
+    <Property Name="PaymentMethodId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="PriceAtOrderTime" Type="money" Nullable="false" />
+    <Property Name="SalesAtOrderTime" Type="int" Nullable="false" />
+    <Property Name="SalesTaxAtOrderTime" Type="int" Nullable="false" />
+    <Property Name="PurchasedPrice" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderConfirmation" Type="bit" />
+    <Property Name="OrderConfirmationDate" Type="datetime" />
+    <Property Name="OrderConfirmBy" Type="int" />
+    <Property Name="OrderStatus" Type="tinyint" Nullable="false" />
+    <Property Name="OrderStatusUpdateBy" Type="int" />
+    <Property Name="OrderStatusUpdateDate" Type="datetime" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="TransactionId" Type="varchar(max)" />
+    <Property Name="RefStoreId" Type="int" />
+    <Property Name="Comment" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_OrdersUpdation">
+    <Key>
+      <PropertyRef Name="OrderUpdationId" />
+    </Key>
+    <Property Name="OrderUpdationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" Nullable="false" />
+    <Property Name="OrderStatus" Type="tinyint" Nullable="false" />
+    <Property Name="OrderStatusUpdateBy" Type="int" />
+    <Property Name="OrderStatusUpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Packages">
+    <Key>
+      <PropertyRef Name="PackageId" />
+    </Key>
+    <Property Name="PackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackageName" Type="varchar" MaxLength="500" />
+    <Property Name="PackagePerMonthCost" Type="money" />
+    <Property Name="PackageTransactionPercentage" Type="int" />
+    <Property Name="Detail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_Pages">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Meta" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Details" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_PagesUpdation">
+    <Key>
+      <PropertyRef Name="UpdationId" />
+    </Key>
+    <Property Name="UpdationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="PageName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Meta" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Details" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_PaymentMethods">
+    <Key>
+      <PropertyRef Name="PaymentMethodId" />
+    </Key>
+    <Property Name="PaymentMethodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentMethodName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PaymentMethodDesc" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_ProductCategories">
+    <Key>
+      <PropertyRef Name="PCId" />
+    </Key>
+    <Property Name="PCId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PCProductId" Type="bigint" Nullable="false" />
+    <Property Name="PCCatId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductDynamicAttributes">
+    <Key>
+      <PropertyRef Name="PDAId" />
+    </Key>
+    <Property Name="PDAId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="PDCId" Type="bigint" Nullable="false" />
+    <Property Name="PDCValue" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductDynamicCategories">
+    <Key>
+      <PropertyRef Name="PDCId" />
+    </Key>
+    <Property Name="PDCId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PCDName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductImages">
+    <Key>
+      <PropertyRef Name="ProductImageId" />
+    </Key>
+    <Property Name="ProductImageId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="ImagePathLarge" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ImagePathThumbNail" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ImageOrderId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_ProductMetarialInfo">
+    <Key>
+      <PropertyRef Name="productMetarialId" />
+    </Key>
+    <Property Name="productMetarialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productId" Type="bigint" />
+    <Property Name="metarialId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ProductBrandId" Type="int" Nullable="false" />
+    <Property Name="ProductUnitPrice" Type="money" Nullable="false" />
+    <Property Name="ProductPriceDescription" Type="varchar" MaxLength="200" />
+    <Property Name="ProductInStock" Type="bigint" Nullable="false" />
+    <Property Name="ProductInsertedBy" Type="int" Nullable="false" />
+    <Property Name="ProductInsertedDate" Type="datetime" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="ProductIsFeatured" Type="bit" />
+    <Property Name="ProductStatus" Type="int" Nullable="false" />
+    <Property Name="ProductSale" Type="int" Nullable="false" />
+    <Property Name="SalesTaxId" Type="int" Nullable="false" />
+    <Property Name="ProductImage" Type="varchar" MaxLength="500" />
+    <Property Name="PurchasePrice" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductsColors">
+    <Key>
+      <PropertyRef Name="ProductColorId" />
+    </Key>
+    <Property Name="ProductColorId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" />
+    <Property Name="ColorId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_ProductsGender">
+    <Key>
+      <PropertyRef Name="PGId" />
+    </Key>
+    <Property Name="PGId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PGProductId" Type="bigint" Nullable="false" />
+    <Property Name="PGGenderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_SalesTaxRates">
+    <Key>
+      <PropertyRef Name="SalesTaxId" />
+    </Key>
+    <Property Name="SalesTaxId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesTaxRate" Type="int" Nullable="false" />
+    <Property Name="SalesTaxSector" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SalesTaxDescription" Type="varchar" MaxLength="5000" />
+    <Property Name="SalesTaxCreatedBy" Type="int" Nullable="false" />
+    <Property Name="SalesTaxCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="SalesTaxLastUpdatedBy" Type="int" />
+    <Property Name="SalesTaxLastUpdateDate" Type="datetime" />
+    <Property Name="StoreId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_SalesTaxRatesUpdation">
+    <Key>
+      <PropertyRef Name="SalesTaxUpdationId" />
+    </Key>
+    <Property Name="SalesTaxUpdationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesTaxId" Type="int" Nullable="false" />
+    <Property Name="SalesTaxRate" Type="int" Nullable="false" />
+    <Property Name="SalesTaxSector" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SalesTaxModifiedBy" Type="int" Nullable="false" />
+    <Property Name="SalesTaxLastUpdationDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Screens">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScreenName" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ScreensToGroup">
+    <Key>
+      <PropertyRef Name="GroupScreenId" />
+    </Key>
+    <Property Name="GroupScreenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScreenId" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_StorePayment">
+    <Key>
+      <PropertyRef Name="StorePaymentId" />
+    </Key>
+    <Property Name="StorePaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreId" Type="int" />
+    <Property Name="StorePaymentFromDate" Type="date" />
+    <Property Name="StorePaymentToDate" Type="date" />
+    <Property Name="StorePayment" Type="money" />
+    <Property Name="StorePaymentDate" Type="date" />
+    <Property Name="StorePaymentInsertedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Stores">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreOwnerName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreOwnerContact" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreOwnerEmail" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreDomainName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TemplateId" Type="int" Nullable="false" />
+    <Property Name="PackageId" Type="int" Nullable="false" />
+    <Property Name="StoreLogo" Type="varchar" MaxLength="500" />
+    <Property Name="StoreStatus" Type="bit" Nullable="false" />
+    <Property Name="StoreStatusComment" Type="varchar" MaxLength="2500" />
+    <Property Name="StoreStatusUpdatedby" Type="int" />
+    <Property Name="StoreStatusUpdatedDate" Type="datetime" />
+    <Property Name="BillingTermId" Type="int" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="StoreCity" Type="varchar(max)" Nullable="false" />
+    <Property Name="StorePostCode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SotreAddress" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Templates">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TemplatePicture" Type="varchar" MaxLength="500" />
+    <Property Name="TemplateLogoWidth" Type="int" Nullable="false" />
+    <Property Name="TemplateLogoHeight" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserPwd" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="UserCreatedBy" Type="int" />
+    <Property Name="UserCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UserLastModifiedBy" Type="int" />
+    <Property Name="UserLastModifiedDate" Type="datetime" />
+    <Property Name="UserFullName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserIdentityInformation" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="UserAddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserGroupId" Type="int" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_UsersUpdation">
+    <Key>
+      <PropertyRef Name="UserUpdationId" />
+    </Key>
+    <Property Name="UserUpdationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserPwd" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="UserLastModifiedBy" Type="int" Nullable="false" />
+    <Property Name="UserLastModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="UserFullName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserIdentityInformation" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="UserAddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserGroupId" Type="int" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_Brands_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Brands" Type="Self.tbl_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Brands">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Brands_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1" />
+    <End Role="tbl_Brands" Type="Self.tbl_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Brands">
+        <PropertyRef Name="BrandUploadedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Brands_tbl_Users1">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_Brands" Type="Self.tbl_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Brands">
+        <PropertyRef Name="BrandLastUpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BrandsUpdation_tbl_Brands">
+    <End Role="tbl_Brands" Type="Self.tbl_Brands" Multiplicity="1" />
+    <End Role="tbl_BrandsUpdation" Type="Self.tbl_BrandsUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brands">
+        <PropertyRef Name="BrandId" />
+      </Principal>
+      <Dependent Role="tbl_BrandsUpdation">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Categories_tbl_Categories">
+    <End Role="tbl_Categories" Type="Self.tbl_Categories" Multiplicity="0..1" />
+    <End Role="tbl_Categories1" Type="Self.tbl_Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="tbl_Categories1">
+        <PropertyRef Name="CatParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Categories_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Categories" Type="Self.tbl_Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Categories">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CategoriesUpdationRecord_tbl_Categories">
+    <End Role="tbl_Categories" Type="Self.tbl_Categories" Multiplicity="1" />
+    <End Role="tbl_CategoriesUpdationRecord" Type="Self.tbl_CategoriesUpdationRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="tbl_CategoriesUpdationRecord">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Colors_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Colors" Type="Self.tbl_Colors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Colors">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Customers_tbl_Country1">
+    <End Role="tbl_Country" Type="Self.tbl_Country" Multiplicity="1" />
+    <End Role="tbl_Customers" Type="Self.tbl_Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="tbl_Customers">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Customers_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Customers" Type="Self.tbl_Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Customers">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_GenderCategories_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_GenderCategories" Type="Self.tbl_GenderCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_GenderCategories">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Groups_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Groups" Type="Self.tbl_Groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Groups">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Groups_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1" />
+    <End Role="tbl_Groups" Type="Self.tbl_Groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Groups">
+        <PropertyRef Name="GroupCreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_HomePageBanners_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_HomePageBanners" Type="Self.tbl_HomePageBanners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_HomePageBanners">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_HomePageBanners_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1" />
+    <End Role="tbl_HomePageBanners" Type="Self.tbl_HomePageBanners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_HomePageBanners">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_NextStorePaymentSchedule" Type="Self.tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores1">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_NextStorePaymentSchedule" Type="Self.tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_NextStorePaymentSchedule" Type="Self.tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Users1">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1" />
+    <End Role="tbl_NextStorePaymentSchedule" Type="Self.tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="InsertedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_PaymentMethods">
+    <End Role="tbl_PaymentMethods" Type="Self.tbl_PaymentMethods" Multiplicity="1" />
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PaymentMethods">
+        <PropertyRef Name="PaymentMethodId" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="PaymentMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="1" />
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrdersUpdation_tbl_Orders">
+    <End Role="tbl_Orders" Type="Self.tbl_Orders" Multiplicity="1" />
+    <End Role="tbl_OrdersUpdation" Type="Self.tbl_OrdersUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="tbl_OrdersUpdation">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Pages_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Pages" Type="Self.tbl_Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Pages">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Pages_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1" />
+    <End Role="tbl_Pages" Type="Self.tbl_Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Pages">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Pages_tbl_Users1">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_Pages" Type="Self.tbl_Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Pages">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PagesUpdation_tbl_Pages">
+    <End Role="tbl_Pages" Type="Self.tbl_Pages" Multiplicity="1" />
+    <End Role="tbl_PagesUpdation" Type="Self.tbl_PagesUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Pages">
+        <PropertyRef Name="PageId" />
+      </Principal>
+      <Dependent Role="tbl_PagesUpdation">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PagesUpdation_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_PagesUpdation" Type="Self.tbl_PagesUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_PagesUpdation">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductCategories_tbl_Categories">
+    <End Role="tbl_Categories" Type="Self.tbl_Categories" Multiplicity="1" />
+    <End Role="tbl_ProductCategories" Type="Self.tbl_ProductCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="tbl_ProductCategories">
+        <PropertyRef Name="PCCatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductCategories_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="1" />
+    <End Role="tbl_ProductCategories" Type="Self.tbl_ProductCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductCategories">
+        <PropertyRef Name="PCProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories">
+    <End Role="tbl_ProductDynamicCategories" Type="Self.tbl_ProductDynamicCategories" Multiplicity="1" />
+    <End Role="tbl_ProductDynamicAttributes" Type="Self.tbl_ProductDynamicAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ProductDynamicCategories">
+        <PropertyRef Name="PDCId" />
+      </Principal>
+      <Dependent Role="tbl_ProductDynamicAttributes">
+        <PropertyRef Name="PDCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductDynamicAttributes_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="1" />
+    <End Role="tbl_ProductDynamicAttributes" Type="Self.tbl_ProductDynamicAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductDynamicAttributes">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductDynamicCategories_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_ProductDynamicCategories" Type="Self.tbl_ProductDynamicCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_ProductDynamicCategories">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductImages_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="1" />
+    <End Role="tbl_ProductImages" Type="Self.tbl_ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductImages">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductMetarialInfo_tbl_Metarial">
+    <End Role="tbl_Metarial" Type="Self.tbl_Metarial" Multiplicity="0..1" />
+    <End Role="tbl_ProductMetarialInfo" Type="Self.tbl_ProductMetarialInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Metarial">
+        <PropertyRef Name="meterialId" />
+      </Principal>
+      <Dependent Role="tbl_ProductMetarialInfo">
+        <PropertyRef Name="metarialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductMetarialInfo_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="0..1" />
+    <End Role="tbl_ProductMetarialInfo" Type="Self.tbl_ProductMetarialInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductMetarialInfo">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_Brands">
+    <End Role="tbl_Brands" Type="Self.tbl_Brands" Multiplicity="1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brands">
+        <PropertyRef Name="BrandId" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="ProductBrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_SalesTaxRates">
+    <End Role="tbl_SalesTaxRates" Type="Self.tbl_SalesTaxRates" Multiplicity="1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SalesTaxRates">
+        <PropertyRef Name="SalesTaxId" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SalesTaxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_SalesTaxRates1">
+    <End Role="tbl_SalesTaxRates" Type="Self.tbl_SalesTaxRates" Multiplicity="1" />
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SalesTaxRates">
+        <PropertyRef Name="SalesTaxId" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SalesTaxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsColors_tbl_Colors">
+    <End Role="tbl_Colors" Type="Self.tbl_Colors" Multiplicity="0..1" />
+    <End Role="tbl_ProductsColors" Type="Self.tbl_ProductsColors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Colors">
+        <PropertyRef Name="ColorId" />
+      </Principal>
+      <Dependent Role="tbl_ProductsColors">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsColors_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="0..1" />
+    <End Role="tbl_ProductsColors" Type="Self.tbl_ProductsColors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductsColors">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsGender_tbl_GenderCategories">
+    <End Role="tbl_GenderCategories" Type="Self.tbl_GenderCategories" Multiplicity="1" />
+    <End Role="tbl_ProductsGender" Type="Self.tbl_ProductsGender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_GenderCategories">
+        <PropertyRef Name="GenderCatId" />
+      </Principal>
+      <Dependent Role="tbl_ProductsGender">
+        <PropertyRef Name="PGGenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsGender_tbl_Products">
+    <End Role="tbl_Products" Type="Self.tbl_Products" Multiplicity="1" />
+    <End Role="tbl_ProductsGender" Type="Self.tbl_ProductsGender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductsGender">
+        <PropertyRef Name="PGProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SalesTaxRates_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="0..1" />
+    <End Role="tbl_SalesTaxRates" Type="Self.tbl_SalesTaxRates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_SalesTaxRates">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates">
+    <End Role="tbl_SalesTaxRates" Type="Self.tbl_SalesTaxRates" Multiplicity="1" />
+    <End Role="tbl_SalesTaxRatesUpdation" Type="Self.tbl_SalesTaxRatesUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SalesTaxRates">
+        <PropertyRef Name="SalesTaxId" />
+      </Principal>
+      <Dependent Role="tbl_SalesTaxRatesUpdation">
+        <PropertyRef Name="SalesTaxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ScreensToGroup_tbl_Groups">
+    <End Role="tbl_Groups" Type="Self.tbl_Groups" Multiplicity="1" />
+    <End Role="tbl_ScreensToGroup" Type="Self.tbl_ScreensToGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Groups">
+        <PropertyRef Name="GroupId" />
+      </Principal>
+      <Dependent Role="tbl_ScreensToGroup">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ScreensToGroup_tbl_Screens">
+    <End Role="tbl_Screens" Type="Self.tbl_Screens" Multiplicity="1" />
+    <End Role="tbl_ScreensToGroup" Type="Self.tbl_ScreensToGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Screens">
+        <PropertyRef Name="ScreenId" />
+      </Principal>
+      <Dependent Role="tbl_ScreensToGroup">
+        <PropertyRef Name="ScreenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ScreensToGroup_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_ScreensToGroup" Type="Self.tbl_ScreensToGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_ScreensToGroup">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_StorePayment_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="0..1" />
+    <End Role="tbl_StorePayment" Type="Self.tbl_StorePayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_StorePayment">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_BillingTerm">
+    <End Role="tbl_BillingTerm" Type="Self.tbl_BillingTerm" Multiplicity="1" />
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BillingTerm">
+        <PropertyRef Name="BTId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="BillingTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Country">
+    <End Role="tbl_Country" Type="Self.tbl_Country" Multiplicity="1" />
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Packages">
+    <End Role="tbl_Packages" Type="Self.tbl_Packages" Multiplicity="1" />
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Packages">
+        <PropertyRef Name="PackageId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="PackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Templates">
+    <End Role="tbl_Templates" Type="Self.tbl_Templates" Multiplicity="1" />
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Templates">
+        <PropertyRef Name="TemplateId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="StoreStatusUpdatedby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Groups">
+    <End Role="tbl_Groups" Type="Self.tbl_Groups" Multiplicity="1" />
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Groups">
+        <PropertyRef Name="GroupId" />
+      </Principal>
+      <Dependent Role="tbl_Users">
+        <PropertyRef Name="UserGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Stores">
+    <End Role="tbl_Stores" Type="Self.tbl_Stores" Multiplicity="1" />
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Users">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_Users1" Type="Self.tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Users1">
+        <PropertyRef Name="UserCreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Users1">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_Users1" Type="Self.tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Users1">
+        <PropertyRef Name="UserLastModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UsersUpdation_tbl_Users">
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1" />
+    <End Role="tbl_UsersUpdation" Type="Self.tbl_UsersUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_UsersUpdation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_AdvanceSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="CatId" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="Color" Type="varchar" Mode="In" />
+    <Parameter Name="Brand" Type="varchar" Mode="In" />
+    <Parameter Name="Material" Type="varchar" Mode="In" />
+    <Parameter Name="MinPrice" Type="varchar" Mode="In" />
+    <Parameter Name="MaxPrice" Type="varchar" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderByCol" Type="varchar" Mode="In" />
+    <Parameter Name="OrderBy" Type="varchar" Mode="In" />
+    <Parameter Name="TotalCount" Type="bigint" Mode="InOut" />
+  </Function>
+  <Function Name="SP_AuthenticateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserLoginId" Type="varchar" Mode="In" />
+    <Parameter Name="UserLoginPwd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_Brands_GetInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BrandId" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_BrandsUpdationRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BrandId" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_CalculateProductPrice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_Categories_GetACategoryChildCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="CatID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Categories_GetAllActiveCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Categories_GetAllActiveCategoriesNotBindToAProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_Categories_GetAllCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Categories_GetAllInActiveCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Categories_SearchWithInCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchVal" Type="varchar" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Color_GetAllColorsNotBindToProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="storeId" Type="int" Mode="In" />
+    <Parameter Name="productId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_ConfirmOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="bigint" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="ReturnVal" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_DynamicCategories_GetAllDCofProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="storeId" Type="int" Mode="In" />
+    <Parameter Name="pId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DynamicCategories_GetDistinctNotBindToProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="storeId" Type="int" Mode="In" />
+    <Parameter Name="pId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_Gender_GetAllGenderNotBindToProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="storeId" Type="int" Mode="In" />
+    <Parameter Name="productId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetAllAuthorizedScreens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GroupId" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sp_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_GetCustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="RegistrationDate" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetSalesTaxRateForProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetStoreInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DomainName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetSubmittedtOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="OrderStatus" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="varchar" Mode="In" />
+    <Parameter Name="DateTo" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetSubmittedtOrdersByOrderId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Materials_GetAllMaterialsNotBindToProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_OrderStatus_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerId" Type="bigint" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_Product_GetAProductCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_ProductSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="CatId" Type="int" Mode="In" />
+    <Parameter Name="DynamicCategory" Type="bigint" Mode="In" />
+    <Parameter Name="Gender" Type="int" Mode="In" />
+    <Parameter Name="Color" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="smallint" Mode="In" />
+    <Parameter Name="Featured" Type="int" Mode="In" />
+    <Parameter Name="Brand" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderByCol" Type="varchar" Mode="In" />
+    <Parameter Name="OrderBy" Type="varchar" Mode="In" />
+    <Parameter Name="TotalCount" Type="bigint" Mode="InOut" />
+  </Function>
+  <Function Name="SP_ProductSearchFront" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="CatId" Type="int" Mode="In" />
+    <Parameter Name="DynamicCategory" Type="bigint" Mode="In" />
+    <Parameter Name="Gender" Type="int" Mode="In" />
+    <Parameter Name="Color" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="smallint" Mode="In" />
+    <Parameter Name="Featured" Type="int" Mode="In" />
+    <Parameter Name="Brand" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderByCol" Type="varchar" Mode="In" />
+    <Parameter Name="OrderBy" Type="varchar" Mode="In" />
+    <Parameter Name="TotalCount" Type="bigint" Mode="InOut" />
+  </Function>
+  <Function Name="SP_RejectOrderAfterConfirmation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="bigint" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="ReturnVal" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_ReturnBrandsWithNoOfProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ReturnColorsWithNoOfProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ReturnGenderWithNoOfProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ReturnMetarialWithNoOfProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ReturnTypeWithNoOfProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SalesReportByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="TotalProfit" Type="int" Mode="InOut" />
+    <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_SalesReportByDateForDownload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="TotalProfit" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_SalesReportByProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PId" Type="bigint" Mode="In" />
+    <Parameter Name="StockAmountSold" Type="int" Mode="InOut" />
+    <Parameter Name="TotalProfit" Type="int" Mode="InOut" />
+    <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_SalesReportByProductForDownload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="PId" Type="bigint" Mode="In" />
+    <Parameter Name="StockAmountSold" Type="int" Mode="InOut" />
+    <Parameter Name="TotalProfit" Type="int" Mode="InOut" />
+    <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_SearchProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchText" Type="varchar" Mode="In" />
+    <Parameter Name="StartIndex" Type="int" Mode="In" />
+    <Parameter Name="EndIndex" Type="int" Mode="In" />
+    <Parameter Name="StoreId" Type="int" Mode="In" />
+    <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="ClothModelStoreContainer">
+    <EntitySet Name="tbl_BillingTerm" EntityType="Self.tbl_BillingTerm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Brands" EntityType="Self.tbl_Brands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_BrandsUpdation" EntityType="Self.tbl_BrandsUpdation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Categories" EntityType="Self.tbl_Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CategoriesUpdationRecord" EntityType="Self.tbl_CategoriesUpdationRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Colors" EntityType="Self.tbl_Colors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Country" EntityType="Self.tbl_Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Customers" EntityType="Self.tbl_Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_GenderCategories" EntityType="Self.tbl_GenderCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Groups" EntityType="Self.tbl_Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_HomePageBanners" EntityType="Self.tbl_HomePageBanners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Metarial" EntityType="Self.tbl_Metarial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NextStorePaymentSchedule" EntityType="Self.tbl_NextStorePaymentSchedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Orders" EntityType="Self.tbl_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OrdersUpdation" EntityType="Self.tbl_OrdersUpdation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Packages" EntityType="Self.tbl_Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Pages" EntityType="Self.tbl_Pages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PagesUpdation" EntityType="Self.tbl_PagesUpdation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PaymentMethods" EntityType="Self.tbl_PaymentMethods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductCategories" EntityType="Self.tbl_ProductCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductDynamicAttributes" EntityType="Self.tbl_ProductDynamicAttributes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductDynamicCategories" EntityType="Self.tbl_ProductDynamicCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductImages" EntityType="Self.tbl_ProductImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductMetarialInfo" EntityType="Self.tbl_ProductMetarialInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Products" EntityType="Self.tbl_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductsColors" EntityType="Self.tbl_ProductsColors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductsGender" EntityType="Self.tbl_ProductsGender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SalesTaxRates" EntityType="Self.tbl_SalesTaxRates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SalesTaxRatesUpdation" EntityType="Self.tbl_SalesTaxRatesUpdation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Screens" EntityType="Self.tbl_Screens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ScreensToGroup" EntityType="Self.tbl_ScreensToGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_StorePayment" EntityType="Self.tbl_StorePayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Stores" EntityType="Self.tbl_Stores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Templates" EntityType="Self.tbl_Templates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_UsersUpdation" EntityType="Self.tbl_UsersUpdation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_Brands_tbl_Stores" Association="Self.FK_tbl_Brands_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Brands_tbl_Users" Association="Self.FK_tbl_Brands_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Brands_tbl_Users1" Association="Self.FK_tbl_Brands_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BrandsUpdation_tbl_Brands" Association="Self.FK_tbl_BrandsUpdation_tbl_Brands">
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+      <End Role="tbl_BrandsUpdation" EntitySet="tbl_BrandsUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Categories_tbl_Categories" Association="Self.FK_tbl_Categories_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_Categories1" EntitySet="tbl_Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Categories_tbl_Stores" Association="Self.FK_tbl_Categories_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CategoriesUpdationRecord_tbl_Categories" Association="Self.FK_tbl_CategoriesUpdationRecord_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_CategoriesUpdationRecord" EntitySet="tbl_CategoriesUpdationRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Colors_tbl_Stores" Association="Self.FK_tbl_Colors_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Colors" EntitySet="tbl_Colors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customers_tbl_Country1" Association="Self.FK_tbl_Customers_tbl_Country1">
+      <End Role="tbl_Country" EntitySet="tbl_Country" />
+      <End Role="tbl_Customers" EntitySet="tbl_Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customers_tbl_Stores" Association="Self.FK_tbl_Customers_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Customers" EntitySet="tbl_Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_GenderCategories_tbl_Stores" Association="Self.FK_tbl_GenderCategories_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_GenderCategories" EntitySet="tbl_GenderCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Groups_tbl_Stores" Association="Self.FK_tbl_Groups_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Groups_tbl_Users" Association="Self.FK_tbl_Groups_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_HomePageBanners_tbl_Stores" Association="Self.FK_tbl_HomePageBanners_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_HomePageBanners" EntitySet="tbl_HomePageBanners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_HomePageBanners_tbl_Users" Association="Self.FK_tbl_HomePageBanners_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_HomePageBanners" EntitySet="tbl_HomePageBanners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores" Association="Self.FK_tbl_NextStorePaymentSchedule_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores1" Association="Self.FK_tbl_NextStorePaymentSchedule_tbl_Stores1">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Users" Association="Self.FK_tbl_NextStorePaymentSchedule_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Users1" Association="Self.FK_tbl_NextStorePaymentSchedule_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_PaymentMethods" Association="Self.FK_tbl_Orders_tbl_PaymentMethods">
+      <End Role="tbl_PaymentMethods" EntitySet="tbl_PaymentMethods" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_Products" Association="Self.FK_tbl_Orders_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_Stores" Association="Self.FK_tbl_Orders_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrdersUpdation_tbl_Orders" Association="Self.FK_tbl_OrdersUpdation_tbl_Orders">
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+      <End Role="tbl_OrdersUpdation" EntitySet="tbl_OrdersUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Pages_tbl_Stores" Association="Self.FK_tbl_Pages_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Pages_tbl_Users" Association="Self.FK_tbl_Pages_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Pages_tbl_Users1" Association="Self.FK_tbl_Pages_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PagesUpdation_tbl_Pages" Association="Self.FK_tbl_PagesUpdation_tbl_Pages">
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+      <End Role="tbl_PagesUpdation" EntitySet="tbl_PagesUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PagesUpdation_tbl_Users" Association="Self.FK_tbl_PagesUpdation_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_PagesUpdation" EntitySet="tbl_PagesUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductCategories_tbl_Categories" Association="Self.FK_tbl_ProductCategories_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_ProductCategories" EntitySet="tbl_ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductCategories_tbl_Products" Association="Self.FK_tbl_ProductCategories_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductCategories" EntitySet="tbl_ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories" Association="Self.FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories">
+      <End Role="tbl_ProductDynamicCategories" EntitySet="tbl_ProductDynamicCategories" />
+      <End Role="tbl_ProductDynamicAttributes" EntitySet="tbl_ProductDynamicAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductDynamicAttributes_tbl_Products" Association="Self.FK_tbl_ProductDynamicAttributes_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductDynamicAttributes" EntitySet="tbl_ProductDynamicAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductDynamicCategories_tbl_Stores" Association="Self.FK_tbl_ProductDynamicCategories_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_ProductDynamicCategories" EntitySet="tbl_ProductDynamicCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductImages_tbl_Products" Association="Self.FK_tbl_ProductImages_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductImages" EntitySet="tbl_ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductMetarialInfo_tbl_Metarial" Association="Self.FK_tbl_ProductMetarialInfo_tbl_Metarial">
+      <End Role="tbl_Metarial" EntitySet="tbl_Metarial" />
+      <End Role="tbl_ProductMetarialInfo" EntitySet="tbl_ProductMetarialInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductMetarialInfo_tbl_Products" Association="Self.FK_tbl_ProductMetarialInfo_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductMetarialInfo" EntitySet="tbl_ProductMetarialInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_Brands" Association="Self.FK_tbl_Products_tbl_Brands">
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_SalesTaxRates" Association="Self.FK_tbl_Products_tbl_SalesTaxRates">
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_SalesTaxRates1" Association="Self.FK_tbl_Products_tbl_SalesTaxRates1">
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsColors_tbl_Colors" Association="Self.FK_tbl_ProductsColors_tbl_Colors">
+      <End Role="tbl_Colors" EntitySet="tbl_Colors" />
+      <End Role="tbl_ProductsColors" EntitySet="tbl_ProductsColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsColors_tbl_Products" Association="Self.FK_tbl_ProductsColors_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductsColors" EntitySet="tbl_ProductsColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsGender_tbl_GenderCategories" Association="Self.FK_tbl_ProductsGender_tbl_GenderCategories">
+      <End Role="tbl_GenderCategories" EntitySet="tbl_GenderCategories" />
+      <End Role="tbl_ProductsGender" EntitySet="tbl_ProductsGender" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsGender_tbl_Products" Association="Self.FK_tbl_ProductsGender_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductsGender" EntitySet="tbl_ProductsGender" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SalesTaxRates_tbl_Stores" Association="Self.FK_tbl_SalesTaxRates_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates" Association="Self.FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates">
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+      <End Role="tbl_SalesTaxRatesUpdation" EntitySet="tbl_SalesTaxRatesUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ScreensToGroup_tbl_Groups" Association="Self.FK_tbl_ScreensToGroup_tbl_Groups">
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+      <End Role="tbl_ScreensToGroup" EntitySet="tbl_ScreensToGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ScreensToGroup_tbl_Screens" Association="Self.FK_tbl_ScreensToGroup_tbl_Screens">
+      <End Role="tbl_Screens" EntitySet="tbl_Screens" />
+      <End Role="tbl_ScreensToGroup" EntitySet="tbl_ScreensToGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ScreensToGroup_tbl_Stores" Association="Self.FK_tbl_ScreensToGroup_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_ScreensToGroup" EntitySet="tbl_ScreensToGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_StorePayment_tbl_Stores" Association="Self.FK_tbl_StorePayment_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_StorePayment" EntitySet="tbl_StorePayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_BillingTerm" Association="Self.FK_tbl_Stores_tbl_BillingTerm">
+      <End Role="tbl_BillingTerm" EntitySet="tbl_BillingTerm" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Country" Association="Self.FK_tbl_Stores_tbl_Country">
+      <End Role="tbl_Country" EntitySet="tbl_Country" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Packages" Association="Self.FK_tbl_Stores_tbl_Packages">
+      <End Role="tbl_Packages" EntitySet="tbl_Packages" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Templates" Association="Self.FK_tbl_Stores_tbl_Templates">
+      <End Role="tbl_Templates" EntitySet="tbl_Templates" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Users" Association="Self.FK_tbl_Stores_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Groups" Association="Self.FK_tbl_Users_tbl_Groups">
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Stores" Association="Self.FK_tbl_Users_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Users" Association="Self.FK_tbl_Users_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Users1" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Users1" Association="Self.FK_tbl_Users_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Users1" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UsersUpdation_tbl_Users" Association="Self.FK_tbl_UsersUpdation_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_UsersUpdation" EntitySet="tbl_UsersUpdation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,2309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClothModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ClothEntities" p1:LazyLoadingEnabled="true">
+    <FunctionImport Name="ReturnBrandsUpdateInformation" ReturnType="Collection(ClothModel.BrandsUpdateInformation)">
+      <Parameter Name="BrandId" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="BrandToUserInformation" ReturnType="Collection(ClothModel.BrandsToUserInformation)">
+      <Parameter Name="BrandId" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Categories_GetACategoryChildCategories" ReturnType="Collection(ClothModel.Categories)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="CatID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Categories_GetAllCategories" ReturnType="Collection(ClothModel.Categories)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Categories_GetAllInActiveCategories" ReturnType="Collection(ClothModel.Categories)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Categories_SearchWithInCategory" ReturnType="Collection(ClothModel.Categories)">
+      <Parameter Name="SearchVal" Mode="In" Type="String" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Product_GetAProductCategories" ReturnType="Collection(ClothModel.ProductToCategories)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllActiveCategoriesNotBindToAProduct" ReturnType="Collection(ClothModel.Categories)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllColorsNotBindToProduct" ReturnType="Collection(ClothModel.Colors)">
+      <Parameter Name="storeId" Mode="In" Type="Int32" />
+      <Parameter Name="productId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllGenderNotBindToProduct" ReturnType="Collection(ClothModel.Genders)">
+      <Parameter Name="storeId" Mode="In" Type="Int32" />
+      <Parameter Name="productId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetDistinctDynamicCatNotBindToProduct" ReturnType="Collection(ClothModel.DynamicCategories)">
+      <Parameter Name="storeId" Mode="In" Type="Int32" />
+      <Parameter Name="pId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllDynamicCategoriesofProduct" ReturnType="Collection(ClothModel.ProductDynamicCategories)">
+      <Parameter Name="storeId" Mode="In" Type="Int32" />
+      <Parameter Name="pId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="AuthenticateUser" ReturnType="Collection(ClothModel.Users)">
+      <Parameter Name="UserLoginId" Mode="In" Type="String" />
+      <Parameter Name="UserLoginPwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetGroupAuthorizedScreens" ReturnType="Collection(ClothModel.Screens)">
+      <Parameter Name="GroupId" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllUsers" ReturnType="Collection(ClothModel.UsersInfo)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CalculateProductPrice" ReturnType="Collection(Double)">
+      <Parameter Name="PId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetSalesTaxRateForProduct" ReturnType="Collection(Int32)">
+      <Parameter Name="ProductId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ConfirmOrder">
+      <Parameter Name="OrderId" Mode="In" Type="Int64" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="ReturnVal" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RejectOrderAfterConfirmation">
+      <Parameter Name="OrderId" Mode="In" Type="Int64" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="ReturnVal" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SalesReportByDate" ReturnType="Collection(ClothModel.SalesReportByDate)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="TotalProfit" Mode="InOut" Type="Int32" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SalesReportByProduct" ReturnType="Collection(ClothModel.SalesReportByProduct)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="PId" Mode="In" Type="Int64" />
+      <Parameter Name="StockAmountSold" Mode="InOut" Type="Int32" />
+      <Parameter Name="TotalProfit" Mode="InOut" Type="Int32" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SalesReportByDateForDownload" ReturnType="Collection(ClothModel.SalesReportByDateForDownload)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="TotalProfit" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SalesReportByProductForDownload" ReturnType="Collection(ClothModel.SalesReportByProductForDownload)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PId" Mode="In" Type="Int64" />
+      <Parameter Name="StockAmountSold" Mode="InOut" Type="Int32" />
+      <Parameter Name="TotalProfit" Mode="InOut" Type="Int32" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetStoreInformation" ReturnType="Collection(ClothModel.StoreInformation)">
+      <Parameter Name="DomainName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_OrderStatus_Customer" ReturnType="Collection(ClothModel.SP_OrderStatus_Customer_Result)">
+      <Parameter Name="CustomerId" Mode="In" Type="Int64" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetSubmittedtOrdersByOrderId" ReturnType="Collection(ClothModel.SP_GetSubmittedtOrdersByOrderId_Result)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="OrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetSubmittedtOrders" ReturnType="Collection(ClothModel.SP_GetSubmittedtOrders_Result1)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="OrderStatus" Mode="In" Type="Int32" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Categories_GetAllActiveCategories" ReturnType="Collection(ClothModel.SP_Categories_GetAllActiveCategories_Result1)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Materials_GetAllMaterialsNotBindToProduct" ReturnType="Collection(ClothModel.SP_Materials_GetAllMaterialsNotBindToProduct_Result)">
+      <Parameter Name="productId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCustomerInfo" ReturnType="Collection(ClothModel.SP_GetCustomerInfo_Result)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="RegistrationDate" Mode="In" Type="String" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ProductSearchFront" ReturnType="Collection(ClothModel.SP_ProductSearchFront_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="CatId" Mode="In" Type="Int32" />
+      <Parameter Name="DynamicCategory" Mode="In" Type="Int64" />
+      <Parameter Name="Gender" Mode="In" Type="Int32" />
+      <Parameter Name="Color" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Int16" />
+      <Parameter Name="Featured" Mode="In" Type="Int32" />
+      <Parameter Name="Brand" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="OrderByCol" Mode="In" Type="String" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_AdvanceSearch" ReturnType="Collection(ClothModel.SP_AdvanceSearch_Result)">
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="CatId" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Color" Mode="In" Type="String" />
+      <Parameter Name="Brand" Mode="In" Type="String" />
+      <Parameter Name="Material" Mode="In" Type="String" />
+      <Parameter Name="MinPrice" Mode="In" Type="String" />
+      <Parameter Name="MaxPrice" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="OrderByCol" Mode="In" Type="String" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ReturnBrandsWithNoOfProducts" ReturnType="Collection(ClothModel.SP_ReturnBrandsWithNoOfProducts_Result)" />
+    <FunctionImport Name="SP_ReturnColorsWithNoOfProducts" ReturnType="Collection(ClothModel.SP_ReturnColorsWithNoOfProducts_Result)" />
+    <FunctionImport Name="SP_ReturnGenderWithNoOfProducts" ReturnType="Collection(ClothModel.SP_ReturnGenderWithNoOfProducts_Result)" />
+    <FunctionImport Name="SP_ReturnMetarialWithNoOfProducts" ReturnType="Collection(ClothModel.SP_ReturnMetarialWithNoOfProducts_Result)" />
+    <FunctionImport Name="SP_ReturnTypeWithNoOfProducts" ReturnType="Collection(ClothModel.SP_ReturnTypeWithNoOfProducts_Result)" />
+    <EntitySet Name="tbl_BillingTerm" EntityType="ClothModel.tbl_BillingTerm" />
+    <EntitySet Name="tbl_Brands" EntityType="ClothModel.tbl_Brands" />
+    <EntitySet Name="tbl_BrandsUpdation" EntityType="ClothModel.tbl_BrandsUpdation" />
+    <EntitySet Name="tbl_Categories" EntityType="ClothModel.tbl_Categories" />
+    <EntitySet Name="tbl_CategoriesUpdationRecord" EntityType="ClothModel.tbl_CategoriesUpdationRecord" />
+    <EntitySet Name="tbl_Colors" EntityType="ClothModel.tbl_Colors" />
+    <EntitySet Name="tbl_Country" EntityType="ClothModel.tbl_Country" />
+    <EntitySet Name="tbl_Customers" EntityType="ClothModel.tbl_Customers" />
+    <EntitySet Name="tbl_GenderCategories" EntityType="ClothModel.tbl_GenderCategories" />
+    <EntitySet Name="tbl_Groups" EntityType="ClothModel.tbl_Groups" />
+    <EntitySet Name="tbl_HomePageBanners" EntityType="ClothModel.tbl_HomePageBanners" />
+    <EntitySet Name="tbl_Metarial" EntityType="ClothModel.tbl_Metarial" />
+    <EntitySet Name="tbl_NextStorePaymentSchedule" EntityType="ClothModel.tbl_NextStorePaymentSchedule" />
+    <EntitySet Name="tbl_Orders" EntityType="ClothModel.tbl_Orders" />
+    <EntitySet Name="tbl_OrdersUpdation" EntityType="ClothModel.tbl_OrdersUpdation" />
+    <EntitySet Name="tbl_Packages" EntityType="ClothModel.tbl_Packages" />
+    <EntitySet Name="tbl_Pages" EntityType="ClothModel.tbl_Pages" />
+    <EntitySet Name="tbl_PagesUpdation" EntityType="ClothModel.tbl_PagesUpdation" />
+    <EntitySet Name="tbl_PaymentMethods" EntityType="ClothModel.tbl_PaymentMethods" />
+    <EntitySet Name="tbl_ProductCategories" EntityType="ClothModel.tbl_ProductCategories" />
+    <EntitySet Name="tbl_ProductDynamicAttributes" EntityType="ClothModel.tbl_ProductDynamicAttributes" />
+    <EntitySet Name="tbl_ProductDynamicCategories" EntityType="ClothModel.tbl_ProductDynamicCategories" />
+    <EntitySet Name="tbl_ProductImages" EntityType="ClothModel.tbl_ProductImages" />
+    <EntitySet Name="tbl_ProductMetarialInfo" EntityType="ClothModel.tbl_ProductMetarialInfo" />
+    <EntitySet Name="tbl_Products" EntityType="ClothModel.tbl_Products" />
+    <EntitySet Name="tbl_ProductsColors" EntityType="ClothModel.tbl_ProductsColors" />
+    <EntitySet Name="tbl_ProductsGender" EntityType="ClothModel.tbl_ProductsGender" />
+    <EntitySet Name="tbl_SalesTaxRates" EntityType="ClothModel.tbl_SalesTaxRates" />
+    <EntitySet Name="tbl_SalesTaxRatesUpdation" EntityType="ClothModel.tbl_SalesTaxRatesUpdation" />
+    <EntitySet Name="tbl_Screens" EntityType="ClothModel.tbl_Screens" />
+    <EntitySet Name="tbl_ScreensToGroup" EntityType="ClothModel.tbl_ScreensToGroup" />
+    <EntitySet Name="tbl_StorePayment" EntityType="ClothModel.tbl_StorePayment" />
+    <EntitySet Name="tbl_Stores" EntityType="ClothModel.tbl_Stores" />
+    <EntitySet Name="tbl_Templates" EntityType="ClothModel.tbl_Templates" />
+    <EntitySet Name="tbl_Users" EntityType="ClothModel.tbl_Users" />
+    <EntitySet Name="tbl_UsersUpdation" EntityType="ClothModel.tbl_UsersUpdation" />
+    <AssociationSet Name="FK_tbl_Stores_tbl_BillingTerm" Association="ClothModel.FK_tbl_Stores_tbl_BillingTerm">
+      <End Role="tbl_BillingTerm" EntitySet="tbl_BillingTerm" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Brands_tbl_Stores" Association="ClothModel.FK_tbl_Brands_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Brands_tbl_Users" Association="ClothModel.FK_tbl_Brands_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Brands_tbl_Users1" Association="ClothModel.FK_tbl_Brands_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BrandsUpdation_tbl_Brands" Association="ClothModel.FK_tbl_BrandsUpdation_tbl_Brands">
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+      <End Role="tbl_BrandsUpdation" EntitySet="tbl_BrandsUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_Brands" Association="ClothModel.FK_tbl_Products_tbl_Brands">
+      <End Role="tbl_Brands" EntitySet="tbl_Brands" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Categories_tbl_Categories" Association="ClothModel.FK_tbl_Categories_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_Categories1" EntitySet="tbl_Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Categories_tbl_Stores" Association="ClothModel.FK_tbl_Categories_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CategoriesUpdationRecord_tbl_Categories" Association="ClothModel.FK_tbl_CategoriesUpdationRecord_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_CategoriesUpdationRecord" EntitySet="tbl_CategoriesUpdationRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductCategories_tbl_Categories" Association="ClothModel.FK_tbl_ProductCategories_tbl_Categories">
+      <End Role="tbl_Categories" EntitySet="tbl_Categories" />
+      <End Role="tbl_ProductCategories" EntitySet="tbl_ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Colors_tbl_Stores" Association="ClothModel.FK_tbl_Colors_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Colors" EntitySet="tbl_Colors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsColors_tbl_Colors" Association="ClothModel.FK_tbl_ProductsColors_tbl_Colors">
+      <End Role="tbl_Colors" EntitySet="tbl_Colors" />
+      <End Role="tbl_ProductsColors" EntitySet="tbl_ProductsColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customers_tbl_Country1" Association="ClothModel.FK_tbl_Customers_tbl_Country1">
+      <End Role="tbl_Country" EntitySet="tbl_Country" />
+      <End Role="tbl_Customers" EntitySet="tbl_Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Country" Association="ClothModel.FK_tbl_Stores_tbl_Country">
+      <End Role="tbl_Country" EntitySet="tbl_Country" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customers_tbl_Stores" Association="ClothModel.FK_tbl_Customers_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Customers" EntitySet="tbl_Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_GenderCategories_tbl_Stores" Association="ClothModel.FK_tbl_GenderCategories_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_GenderCategories" EntitySet="tbl_GenderCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsGender_tbl_GenderCategories" Association="ClothModel.FK_tbl_ProductsGender_tbl_GenderCategories">
+      <End Role="tbl_GenderCategories" EntitySet="tbl_GenderCategories" />
+      <End Role="tbl_ProductsGender" EntitySet="tbl_ProductsGender" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Groups_tbl_Stores" Association="ClothModel.FK_tbl_Groups_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Groups_tbl_Users" Association="ClothModel.FK_tbl_Groups_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ScreensToGroup_tbl_Groups" Association="ClothModel.FK_tbl_ScreensToGroup_tbl_Groups">
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+      <End Role="tbl_ScreensToGroup" EntitySet="tbl_ScreensToGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Groups" Association="ClothModel.FK_tbl_Users_tbl_Groups">
+      <End Role="tbl_Groups" EntitySet="tbl_Groups" />
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_HomePageBanners_tbl_Stores" Association="ClothModel.FK_tbl_HomePageBanners_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_HomePageBanners" EntitySet="tbl_HomePageBanners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_HomePageBanners_tbl_Users" Association="ClothModel.FK_tbl_HomePageBanners_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_HomePageBanners" EntitySet="tbl_HomePageBanners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductMetarialInfo_tbl_Metarial" Association="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Metarial">
+      <End Role="tbl_Metarial" EntitySet="tbl_Metarial" />
+      <End Role="tbl_ProductMetarialInfo" EntitySet="tbl_ProductMetarialInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores" Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores1" Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores1">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Users" Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_NextStorePaymentSchedule_tbl_Users1" Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_NextStorePaymentSchedule" EntitySet="tbl_NextStorePaymentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_PaymentMethods" Association="ClothModel.FK_tbl_Orders_tbl_PaymentMethods">
+      <End Role="tbl_PaymentMethods" EntitySet="tbl_PaymentMethods" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_Products" Association="ClothModel.FK_tbl_Orders_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Orders_tbl_Stores" Association="ClothModel.FK_tbl_Orders_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrdersUpdation_tbl_Orders" Association="ClothModel.FK_tbl_OrdersUpdation_tbl_Orders">
+      <End Role="tbl_Orders" EntitySet="tbl_Orders" />
+      <End Role="tbl_OrdersUpdation" EntitySet="tbl_OrdersUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Packages" Association="ClothModel.FK_tbl_Stores_tbl_Packages">
+      <End Role="tbl_Packages" EntitySet="tbl_Packages" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Pages_tbl_Stores" Association="ClothModel.FK_tbl_Pages_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Pages_tbl_Users" Association="ClothModel.FK_tbl_Pages_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Pages_tbl_Users1" Association="ClothModel.FK_tbl_Pages_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PagesUpdation_tbl_Pages" Association="ClothModel.FK_tbl_PagesUpdation_tbl_Pages">
+      <End Role="tbl_Pages" EntitySet="tbl_Pages" />
+      <End Role="tbl_PagesUpdation" EntitySet="tbl_PagesUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PagesUpdation_tbl_Users" Association="ClothModel.FK_tbl_PagesUpdation_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_PagesUpdation" EntitySet="tbl_PagesUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductCategories_tbl_Products" Association="ClothModel.FK_tbl_ProductCategories_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductCategories" EntitySet="tbl_ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories" Association="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories">
+      <End Role="tbl_ProductDynamicCategories" EntitySet="tbl_ProductDynamicCategories" />
+      <End Role="tbl_ProductDynamicAttributes" EntitySet="tbl_ProductDynamicAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductDynamicAttributes_tbl_Products" Association="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductDynamicAttributes" EntitySet="tbl_ProductDynamicAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductDynamicCategories_tbl_Stores" Association="ClothModel.FK_tbl_ProductDynamicCategories_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_ProductDynamicCategories" EntitySet="tbl_ProductDynamicCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductImages_tbl_Products" Association="ClothModel.FK_tbl_ProductImages_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductImages" EntitySet="tbl_ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductMetarialInfo_tbl_Products" Association="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductMetarialInfo" EntitySet="tbl_ProductMetarialInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_SalesTaxRates" Association="ClothModel.FK_tbl_Products_tbl_SalesTaxRates">
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Products_tbl_SalesTaxRates1" Association="ClothModel.FK_tbl_Products_tbl_SalesTaxRates1">
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsColors_tbl_Products" Association="ClothModel.FK_tbl_ProductsColors_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductsColors" EntitySet="tbl_ProductsColors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ProductsGender_tbl_Products" Association="ClothModel.FK_tbl_ProductsGender_tbl_Products">
+      <End Role="tbl_Products" EntitySet="tbl_Products" />
+      <End Role="tbl_ProductsGender" EntitySet="tbl_ProductsGender" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SalesTaxRates_tbl_Stores" Association="ClothModel.FK_tbl_SalesTaxRates_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates" Association="ClothModel.FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates">
+      <End Role="tbl_SalesTaxRates" EntitySet="tbl_SalesTaxRates" />
+      <End Role="tbl_SalesTaxRatesUpdation" EntitySet="tbl_SalesTaxRatesUpdation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ScreensToGroup_tbl_Screens" Association="ClothModel.FK_tbl_ScreensToGroup_tbl_Screens">
+      <End Role="tbl_Screens" EntitySet="tbl_Screens" />
+      <End Role="tbl_ScreensToGroup" EntitySet="tbl_ScreensToGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ScreensToGroup_tbl_Stores" Association="ClothModel.FK_tbl_ScreensToGroup_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_ScreensToGroup" EntitySet="tbl_ScreensToGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_StorePayment_tbl_Stores" Association="ClothModel.FK_tbl_StorePayment_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_StorePayment" EntitySet="tbl_StorePayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Templates" Association="ClothModel.FK_tbl_Stores_tbl_Templates">
+      <End Role="tbl_Templates" EntitySet="tbl_Templates" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stores_tbl_Users" Association="ClothModel.FK_tbl_Stores_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Stores" Association="ClothModel.FK_tbl_Users_tbl_Stores">
+      <End Role="tbl_Stores" EntitySet="tbl_Stores" />
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Users" Association="ClothModel.FK_tbl_Users_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Users1" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Users_tbl_Users1" Association="ClothModel.FK_tbl_Users_tbl_Users1">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Users1" EntitySet="tbl_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UsersUpdation_tbl_Users" Association="ClothModel.FK_tbl_UsersUpdation_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_UsersUpdation" EntitySet="tbl_UsersUpdation" />
+    </AssociationSet>
+    <FunctionImport Name="SP_ProductSearch" ReturnType="Collection(ClothModel.SP_ProductSearch_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="CatId" Mode="In" Type="Int32" />
+      <Parameter Name="DynamicCategory" Mode="In" Type="Int64" />
+      <Parameter Name="Gender" Mode="In" Type="Int32" />
+      <Parameter Name="Color" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Int16" />
+      <Parameter Name="Featured" Mode="In" Type="Int32" />
+      <Parameter Name="Brand" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="OrderByCol" Mode="In" Type="String" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SearchProduct" ReturnType="Collection(ClothModel.SP_SearchProduct_Result)">
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="StartIndex" Mode="In" Type="Int32" />
+      <Parameter Name="EndIndex" Mode="In" Type="Int32" />
+      <Parameter Name="StoreId" Mode="In" Type="Int32" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="BrandsUpdateInformation">
+    <Property Type="String" Name="BrandName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="BrandDescription" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="BrandsModifiedDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="UserLoginId" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserFullName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="BrandsToUserInformation">
+    <Property Type="String" Name="BrandName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="BrandDescription" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="BrandUploadedDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="BrandUploadedBy" Nullable="false" />
+    <Property Type="Int32" Name="BrandLastUpdatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="BrandLastUpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserLoginId" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Boolean" Name="IsUserActive" Nullable="false" />
+    <Property Type="String" Name="UserFullName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Categories">
+    <Property Name="CatId" Nullable="true" Type="Int32" />
+    <Property Name="CatName" Nullable="true" MaxLength="100" Type="String" />
+    <Property Name="CatDescription" Nullable="true" MaxLength="500" Type="String" />
+    <Property Name="CatHierarchy" Nullable="true" Type="String" />
+    <Property Name="CatParent" Nullable="true" Type="Int32" />
+    <Property Name="CatIsActive" Nullable="true" Type="Boolean" />
+    <Property Name="CatCreatedBy" Nullable="true" Type="Int32" />
+    <Property Name="CatCreatedDate" Nullable="true" Precision="23" Type="DateTime" />
+    <Property Name="CatLastModifiedBy" Nullable="true" Type="Int32" />
+    <Property Name="CatLastModifiedDate" Nullable="true" Precision="23" Type="DateTime" />
+    <Property Type="Int32" Name="StoreId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ProductToCategories">
+    <Property Type="Int32" Name="PCCatId" Nullable="false" />
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CatHierarchy" Nullable="true" />
+    <Property Type="String" Name="CatName" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="PCId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Colors">
+    <Property Type="Int32" Name="ColorId" Nullable="false" />
+    <Property Type="String" Name="ColorName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ColorCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Genders">
+    <Property Type="Int32" Name="GenderCatId" Nullable="false" />
+    <Property Type="String" Name="GenderCatName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="GenderCatDescription" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DynamicCategories">
+    <Property Type="String" Name="PCDName" Nullable="false" MaxLength="500" />
+    <Property Type="Int64" Name="PID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ProductDynamicCategories">
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="PDCValue" Nullable="false" MaxLength="1000" />
+    <Property Type="Int64" Name="PDAId" Nullable="false" />
+    <Property Type="Int64" Name="PDCId" Nullable="false" />
+    <Property Type="String" Name="PCDName" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Users">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserLoginId" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserPwd" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="UserCreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="UserCreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="UserLastModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="UserLastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UserFullName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserIdentityInformation" Nullable="false" MaxLength="1000" />
+    <Property Type="String" Name="UserAddress" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="UserGroupId" Nullable="false" />
+    <Property Type="String" Name="UserEmail" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Screens">
+    <Property Type="String" Name="screenName" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="UsersInfo">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserFullName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserLoginId" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="UserGroupId" Nullable="false" />
+    <Property Type="String" Name="GroupName" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="GroupStatus" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SearchProduct">
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ProductDescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ProductBrandId" Nullable="false" />
+    <Property Type="Decimal" Name="ProductUnitPrice" Nullable="false" Precision="19" />
+    <Property Type="String" Name="ProductPriceDescription" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="Int32" Name="ProductInsertedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ProductInsertedDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="OrderStatusCustomer">
+    <Property Type="Int64" Name="RowNum" Nullable="true" />
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="OrderSite" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="true" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ProductDescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="Double" Name="ProductPrice" Nullable="true" />
+    <Property Type="String" Name="PaymentMethod" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SalesReportByDate">
+    <Property Type="Int32" Name="Profit" Nullable="true" />
+    <Property Type="Int64" Name="ProductId" Nullable="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ROWNUMBER" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SalesReportByProduct">
+    <Property Type="Int64" Name="ROWNUMBER" Nullable="true" />
+    <Property Type="Int64" Name="OrderId" Nullable="true" />
+    <Property Type="Int64" Name="ProductId" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="PriceAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="PurchasedPrice" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SingleProfit" Nullable="true" />
+    <Property Type="Int32" Name="TotalProfit" Nullable="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SalesReportByDateForDownload">
+    <Property Type="Int64" Name="ROWNUMBER" Nullable="true" />
+    <Property Type="Int32" Name="Profit" Nullable="true" />
+    <Property Type="Int64" Name="ProductId" Nullable="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SalesReportByProductForDownload">
+    <Property Type="Int64" Name="ROWNUMBER" Nullable="true" />
+    <Property Type="Int64" Name="OrderId" Nullable="true" />
+    <Property Type="Int64" Name="ProductId" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="PriceAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="true" />
+    <Property Type="Int32" Name="PurchasedPrice" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SingleProfit" Nullable="true" />
+    <Property Type="Int32" Name="TotalProfit" Nullable="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_GetStoreInformation_Result">
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="String" Name="StoreName" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreOwnerName" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreOwnerContact" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreOwnerEmail" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreDomainName" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="PackageId" Nullable="false" />
+    <Property Type="String" Name="StoreLogo" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="StoreStatus" Nullable="false" />
+    <Property Type="String" Name="StoreStatusComment" Nullable="true" MaxLength="2500" />
+    <Property Type="Int32" Name="StoreStatusUpdatedby" Nullable="true" />
+    <Property Type="DateTime" Name="StoreStatusUpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BillingTermId" Nullable="false" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="String" Name="StoreCity" Nullable="false" />
+    <Property Type="String" Name="StorePostCode" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreContact" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SotreAddress" Nullable="false" />
+    <Property Type="String" Name="TemplateName" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="StoreInformation">
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="String" Name="StoreName" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreOwnerName" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreOwnerContact" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreOwnerEmail" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreDomainName" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="PackageId" Nullable="false" />
+    <Property Type="String" Name="StoreLogo" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="StoreStatus" Nullable="false" />
+    <Property Type="String" Name="StoreStatusComment" Nullable="true" MaxLength="2500" />
+    <Property Type="Int32" Name="StoreStatusUpdatedby" Nullable="true" />
+    <Property Type="DateTime" Name="StoreStatusUpdatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BillingTermId" Nullable="false" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="String" Name="StoreCity" Nullable="false" />
+    <Property Type="String" Name="StorePostCode" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="StoreContact" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SotreAddress" Nullable="false" />
+    <Property Type="String" Name="TemplateName" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="OrdersInfo">
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="OrderConfirmBy" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="Int32" Name="OrderStatusUpdateBy" Nullable="true" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxRate" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="TelephoneNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ProvinceOrState" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="200" />
+    <Property Type="Byte" Name="Status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="OrderInfoList">
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="PurchasedPrice" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="OrderConfirmBy" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="Int32" Name="OrderStatusUpdateBy" Nullable="true" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreID" Nullable="false" />
+    <Property Type="String" Name="TransactionId" Nullable="true" />
+    <Property Type="Int32" Name="RefStoreId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetSubmittedtOrders_Result">
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="OrderConfirmBy" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="Int32" Name="OrderStatusUpdateBy" Nullable="true" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxRate" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="TelephoneNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ProvinceOrState" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="200" />
+    <Property Type="Byte" Name="Status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SubbmittedtOrders" />
+  <ComplexType Name="SP_OrderStatus_Customer_Result">
+    <Property Type="Int64" Name="RowNum" Nullable="true" />
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="false" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ProductDescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="Double" Name="ProductPrice" Nullable="true" />
+    <Property Type="String" Name="PaymentMethod" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_GetSubmittedtOrdersByOrderId_Result">
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="true" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="OrderConfirmBy" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="Int32" Name="OrderStatusUpdateBy" Nullable="true" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxRate" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="TelephoneNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ProvinceOrState" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="200" />
+    <Property Type="Byte" Name="Status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GetSubmittedtOrders_Result1">
+    <Property Type="Int64" Name="OrderId" Nullable="false" />
+    <Property Type="Int64" Name="ProductId" Nullable="false" />
+    <Property Type="Int64" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="PriceAtOrderTime" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="SalesAtOrderTime" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxAtOrderTime" Nullable="true" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="OrderConfirmation" Nullable="true" />
+    <Property Type="DateTime" Name="OrderConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="OrderConfirmBy" Nullable="true" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <Property Type="Int32" Name="OrderStatusUpdateBy" Nullable="true" />
+    <Property Type="DateTime" Name="OrderStatusUpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxRate" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="TelephoneNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ProvinceOrState" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="200" />
+    <Property Type="Byte" Name="Status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_Categories_GetAllActiveCategories_Result">
+    <Property Type="Int32" Name="CatId" Nullable="true" />
+    <Property Type="String" Name="CatName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CatDescription" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CatHierarchy" Nullable="true" />
+    <Property Type="Int32" Name="CatParent" Nullable="true" />
+    <Property Type="Boolean" Name="CatIsActive" Nullable="true" />
+    <Property Type="Int32" Name="CatCreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CatCreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CatLastModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CatLastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreId" Nullable="true" />
+    <Property Type="Int64" Name="ShowOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_Categories_GetAllActiveCategories_Result1">
+    <Property Type="Int32" Name="CatId" Nullable="true" />
+    <Property Type="String" Name="CatName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CatDescription" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CatHierarchy" Nullable="true" />
+    <Property Type="Int32" Name="CatParent" Nullable="true" />
+    <Property Type="Boolean" Name="CatIsActive" Nullable="true" />
+    <Property Type="Int32" Name="CatCreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CatCreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CatLastModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CatLastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StoreId" Nullable="true" />
+    <Property Type="Int64" Name="ShowOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_Materials_GetAllMaterialsNotBindToProduct_Result">
+    <Property Type="Int32" Name="meterialId" Nullable="false" />
+    <Property Type="String" Name="meterialName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="meterialDescription" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCustomerInfo_Result">
+    <Property Type="Int64" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pwd" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TelephoneNumber" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="DOB" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProvinceOrState" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CountryId" Nullable="false" />
+    <Property Type="Byte" Name="Status" Nullable="false" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="DateTime" Name="RegistrationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Ipaddress" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_ProductSearchFront_Result">
+    <Property Type="Int64" Name="RowNumber" Nullable="true" />
+    <Property Type="Int64" Name="productid" Nullable="false" />
+    <Property Type="String" Name="productname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="productdescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="productbrandid" Nullable="false" />
+    <Property Type="Decimal" Name="productunitprice" Nullable="false" Precision="19" />
+    <Property Type="String" Name="productpricedescription" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="productinstock" Nullable="false" />
+    <Property Type="String" Name="productimage" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="productinsertedby" Nullable="false" />
+    <Property Type="DateTime" Name="productinserteddate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="storeid" Nullable="false" />
+    <Property Type="Boolean" Name="productisfeatured" Nullable="true" />
+    <Property Type="Int32" Name="productstatus" Nullable="false" />
+    <Property Type="Int32" Name="productsale" Nullable="false" />
+    <Property Type="Int32" Name="salestaxid" Nullable="false" />
+    <Property Type="Int32" Name="brandid" Nullable="false" />
+    <Property Type="String" Name="brandname" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_AdvanceSearch_Result">
+    <Property Type="Int64" Name="RowNumber" Nullable="true" />
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ProductDescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ProductBrandId" Nullable="false" />
+    <Property Type="Decimal" Name="ProductUnitPrice" Nullable="false" Precision="19" />
+    <Property Type="String" Name="ProductPriceDescription" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="ProductInsertedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ProductInsertedDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="Int32" Name="BrandId" Nullable="false" />
+    <Property Type="String" Name="BrandName" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_ReturnBrandsWithNoOfProducts_Result">
+    <Property Type="Int32" Name="BrandId" Nullable="false" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="127" />
+  </ComplexType>
+  <ComplexType Name="SP_ReturnColorsWithNoOfProducts_Result">
+    <Property Type="Int32" Name="ColorId" Nullable="false" />
+    <Property Type="String" Name="ColorName" Nullable="true" MaxLength="125" />
+  </ComplexType>
+  <ComplexType Name="SP_ReturnGenderWithNoOfProducts_Result">
+    <Property Type="Int32" Name="GenderCatId" Nullable="false" />
+    <Property Type="String" Name="ProductGender" Nullable="true" MaxLength="125" />
+  </ComplexType>
+  <ComplexType Name="SP_ReturnMetarialWithNoOfProducts_Result">
+    <Property Type="Int32" Name="meterialId" Nullable="false" />
+    <Property Type="String" Name="MaterialName" Nullable="true" MaxLength="75" />
+  </ComplexType>
+  <ComplexType Name="SP_ReturnTypeWithNoOfProducts_Result">
+    <Property Type="Int32" Name="CatId" Nullable="false" />
+    <Property Type="String" Name="ProductType" Nullable="true" MaxLength="125" />
+  </ComplexType>
+  <EntityType Name="tbl_BillingTerm">
+    <Key>
+      <PropertyRef Name="BTId" />
+    </Key>
+    <Property Name="BTId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BTTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BTBill" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="BTDuration" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Stores_tbl_BillingTerm" FromRole="tbl_BillingTerm" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_Brands">
+    <Key>
+      <PropertyRef Name="BrandId" />
+    </Key>
+    <Property Name="BrandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BrandDescription" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BrandUploadedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BrandUploadedBy" Type="Int32" Nullable="false" />
+    <Property Name="BrandLastUpdatedBy" Type="Int32" />
+    <Property Name="BrandLastUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="BrandImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Brands_tbl_Stores" FromRole="tbl_Brands" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_Brands_tbl_Users" FromRole="tbl_Brands" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_Users1" Relationship="ClothModel.FK_tbl_Brands_tbl_Users1" FromRole="tbl_Brands" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_BrandsUpdation" Relationship="ClothModel.FK_tbl_BrandsUpdation_tbl_Brands" FromRole="tbl_Brands" ToRole="tbl_BrandsUpdation" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_Products_tbl_Brands" FromRole="tbl_Brands" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_BrandsUpdation">
+    <Key>
+      <PropertyRef Name="BrandUpdationId" />
+    </Key>
+    <Property Name="BrandUpdationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandId" Type="Int32" Nullable="false" />
+    <Property Name="BrandDescription" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BrandsModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="BrandsModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="BrandName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BrandImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Brands" Relationship="ClothModel.FK_tbl_BrandsUpdation_tbl_Brands" FromRole="tbl_BrandsUpdation" ToRole="tbl_Brands" />
+  </EntityType>
+  <EntityType Name="tbl_Categories">
+    <Key>
+      <PropertyRef Name="CatId" />
+    </Key>
+    <Property Name="CatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CatDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CatParent" Type="Int32" />
+    <Property Name="CatIsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CatCreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CatCreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CatLastModifiedBy" Type="Int32" />
+    <Property Name="CatLastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="ShowOrder" Type="Int64" />
+    <NavigationProperty Name="tbl_Categories1" Relationship="ClothModel.FK_tbl_Categories_tbl_Categories" FromRole="tbl_Categories" ToRole="tbl_Categories1" />
+    <NavigationProperty Name="tbl_Categories2" Relationship="ClothModel.FK_tbl_Categories_tbl_Categories" FromRole="tbl_Categories1" ToRole="tbl_Categories" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Categories_tbl_Stores" FromRole="tbl_Categories" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_CategoriesUpdationRecord" Relationship="ClothModel.FK_tbl_CategoriesUpdationRecord_tbl_Categories" FromRole="tbl_Categories" ToRole="tbl_CategoriesUpdationRecord" />
+    <NavigationProperty Name="tbl_ProductCategories" Relationship="ClothModel.FK_tbl_ProductCategories_tbl_Categories" FromRole="tbl_Categories" ToRole="tbl_ProductCategories" />
+  </EntityType>
+  <EntityType Name="tbl_CategoriesUpdationRecord">
+    <Key>
+      <PropertyRef Name="CatUpdationRecord" />
+    </Key>
+    <Property Name="CatUpdationRecord" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatId" Type="Int32" Nullable="false" />
+    <Property Name="CatName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CatDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CatParent" Type="Int64" />
+    <Property Name="CatIsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CatModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CatModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Categories" Relationship="ClothModel.FK_tbl_CategoriesUpdationRecord_tbl_Categories" FromRole="tbl_CategoriesUpdationRecord" ToRole="tbl_Categories" />
+  </EntityType>
+  <EntityType Name="tbl_Colors">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ColorCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Colors_tbl_Stores" FromRole="tbl_Colors" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_ProductsColors" Relationship="ClothModel.FK_tbl_ProductsColors_tbl_Colors" FromRole="tbl_Colors" ToRole="tbl_ProductsColors" />
+  </EntityType>
+  <EntityType Name="tbl_Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Customers" Relationship="ClothModel.FK_tbl_Customers_tbl_Country1" FromRole="tbl_Country" ToRole="tbl_Customers" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Stores_tbl_Country" FromRole="tbl_Country" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pwd" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ProvinceOrState" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+    <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Country" Relationship="ClothModel.FK_tbl_Customers_tbl_Country1" FromRole="tbl_Customers" ToRole="tbl_Country" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Customers_tbl_Stores" FromRole="tbl_Customers" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_GenderCategories">
+    <Key>
+      <PropertyRef Name="GenderCatId" />
+    </Key>
+    <Property Name="GenderCatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderCatName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GenderCatDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_GenderCategories_tbl_Stores" FromRole="tbl_GenderCategories" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_ProductsGender" Relationship="ClothModel.FK_tbl_ProductsGender_tbl_GenderCategories" FromRole="tbl_GenderCategories" ToRole="tbl_ProductsGender" />
+  </EntityType>
+  <EntityType Name="tbl_Groups">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GroupDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="GroupCreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="GroupCreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Groups_tbl_Stores" FromRole="tbl_Groups" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_Groups_tbl_Users" FromRole="tbl_Groups" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_ScreensToGroup" Relationship="ClothModel.FK_tbl_ScreensToGroup_tbl_Groups" FromRole="tbl_Groups" ToRole="tbl_ScreensToGroup" />
+    <NavigationProperty Name="tbl_Users1" Relationship="ClothModel.FK_tbl_Users_tbl_Groups" FromRole="tbl_Groups" ToRole="tbl_Users" />
+  </EntityType>
+  <EntityType Name="tbl_HomePageBanners">
+    <Key>
+      <PropertyRef Name="HPBId" />
+    </Key>
+    <Property Name="HPBId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BannerImage" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LinkPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_HomePageBanners_tbl_Stores" FromRole="tbl_HomePageBanners" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_HomePageBanners_tbl_Users" FromRole="tbl_HomePageBanners" ToRole="tbl_Users" />
+    <Property Name="BannerOrder" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Metarial">
+    <Key>
+      <PropertyRef Name="meterialId" />
+    </Key>
+    <Property Name="meterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="meterialName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="meterialDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_ProductMetarialInfo" Relationship="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Metarial" FromRole="tbl_Metarial" ToRole="tbl_ProductMetarialInfo" />
+  </EntityType>
+  <EntityType Name="tbl_NextStorePaymentSchedule">
+    <Key>
+      <PropertyRef Name="NextPSId" />
+    </Key>
+    <Property Name="NextPSId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="ScheduleDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsertionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InsertedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores" FromRole="tbl_NextStorePaymentSchedule" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Stores1" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores1" FromRole="tbl_NextStorePaymentSchedule" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users" FromRole="tbl_NextStorePaymentSchedule" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_Users1" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users1" FromRole="tbl_NextStorePaymentSchedule" ToRole="tbl_Users" />
+  </EntityType>
+  <EntityType Name="tbl_Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="CustomerId" Type="Int64" Nullable="false" />
+    <Property Name="PaymentMethodId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="PriceAtOrderTime" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="SalesAtOrderTime" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxAtOrderTime" Type="Int32" Nullable="false" />
+    <Property Name="PurchasedPrice" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderConfirmation" Type="Boolean" />
+    <Property Name="OrderConfirmationDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderConfirmBy" Type="Int32" />
+    <Property Name="OrderStatus" Type="Byte" Nullable="false" />
+    <Property Name="OrderStatusUpdateBy" Type="Int32" />
+    <Property Name="OrderStatusUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RefStoreId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_PaymentMethods" Relationship="ClothModel.FK_tbl_Orders_tbl_PaymentMethods" FromRole="tbl_Orders" ToRole="tbl_PaymentMethods" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_Orders_tbl_Products" FromRole="tbl_Orders" ToRole="tbl_Products" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Orders_tbl_Stores" FromRole="tbl_Orders" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_OrdersUpdation" Relationship="ClothModel.FK_tbl_OrdersUpdation_tbl_Orders" FromRole="tbl_Orders" ToRole="tbl_OrdersUpdation" />
+  </EntityType>
+  <EntityType Name="tbl_OrdersUpdation">
+    <Key>
+      <PropertyRef Name="OrderUpdationId" />
+    </Key>
+    <Property Name="OrderUpdationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int64" Nullable="false" />
+    <Property Name="OrderStatus" Type="Byte" Nullable="false" />
+    <Property Name="OrderStatusUpdateBy" Type="Int32" />
+    <Property Name="OrderStatusUpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_Orders" Relationship="ClothModel.FK_tbl_OrdersUpdation_tbl_Orders" FromRole="tbl_OrdersUpdation" ToRole="tbl_Orders" />
+  </EntityType>
+  <EntityType Name="tbl_Packages">
+    <Key>
+      <PropertyRef Name="PackageId" />
+    </Key>
+    <Property Name="PackageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackageName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PackagePerMonthCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PackageTransactionPercentage" Type="Int32" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Stores_tbl_Packages" FromRole="tbl_Packages" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_Pages">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="PageName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Meta" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Pages_tbl_Stores" FromRole="tbl_Pages" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_Pages_tbl_Users" FromRole="tbl_Pages" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_Users1" Relationship="ClothModel.FK_tbl_Pages_tbl_Users1" FromRole="tbl_Pages" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_PagesUpdation" Relationship="ClothModel.FK_tbl_PagesUpdation_tbl_Pages" FromRole="tbl_Pages" ToRole="tbl_PagesUpdation" />
+  </EntityType>
+  <EntityType Name="tbl_PagesUpdation">
+    <Key>
+      <PropertyRef Name="UpdationId" />
+    </Key>
+    <Property Name="UpdationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="PageName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Meta" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_Pages" Relationship="ClothModel.FK_tbl_PagesUpdation_tbl_Pages" FromRole="tbl_PagesUpdation" ToRole="tbl_Pages" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_PagesUpdation_tbl_Users" FromRole="tbl_PagesUpdation" ToRole="tbl_Users" />
+  </EntityType>
+  <EntityType Name="tbl_PaymentMethods">
+    <Key>
+      <PropertyRef Name="PaymentMethodId" />
+    </Key>
+    <Property Name="PaymentMethodId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentMethodName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentMethodDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Orders" Relationship="ClothModel.FK_tbl_Orders_tbl_PaymentMethods" FromRole="tbl_PaymentMethods" ToRole="tbl_Orders" />
+  </EntityType>
+  <EntityType Name="tbl_ProductCategories">
+    <Key>
+      <PropertyRef Name="PCId" />
+    </Key>
+    <Property Name="PCId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PCProductId" Type="Int64" Nullable="false" />
+    <Property Name="PCCatId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Categories" Relationship="ClothModel.FK_tbl_ProductCategories_tbl_Categories" FromRole="tbl_ProductCategories" ToRole="tbl_Categories" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_ProductCategories_tbl_Products" FromRole="tbl_ProductCategories" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_ProductDynamicAttributes">
+    <Key>
+      <PropertyRef Name="PDAId" />
+    </Key>
+    <Property Name="PDAId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="PDCId" Type="Int64" Nullable="false" />
+    <Property Name="PDCValue" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_ProductDynamicCategories" Relationship="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories" FromRole="tbl_ProductDynamicAttributes" ToRole="tbl_ProductDynamicCategories" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_Products" FromRole="tbl_ProductDynamicAttributes" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_ProductDynamicCategories">
+    <Key>
+      <PropertyRef Name="PDCId" />
+    </Key>
+    <Property Name="PDCId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PCDName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_ProductDynamicAttributes" Relationship="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories" FromRole="tbl_ProductDynamicCategories" ToRole="tbl_ProductDynamicAttributes" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_ProductDynamicCategories_tbl_Stores" FromRole="tbl_ProductDynamicCategories" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_ProductImages">
+    <Key>
+      <PropertyRef Name="ProductImageId" />
+    </Key>
+    <Property Name="ProductImageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="ImagePathLarge" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePathThumbNail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImageOrderId" Type="Int32" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_ProductImages_tbl_Products" FromRole="tbl_ProductImages" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_ProductMetarialInfo">
+    <Key>
+      <PropertyRef Name="productMetarialId" />
+    </Key>
+    <Property Name="productMetarialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productId" Type="Int64" />
+    <Property Name="metarialId" Type="Int32" />
+    <NavigationProperty Name="tbl_Metarial" Relationship="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Metarial" FromRole="tbl_ProductMetarialInfo" ToRole="tbl_Metarial" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Products" FromRole="tbl_ProductMetarialInfo" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProductDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ProductBrandId" Type="Int32" Nullable="false" />
+    <Property Name="ProductUnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ProductPriceDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ProductInStock" Type="Int64" Nullable="false" />
+    <Property Name="ProductInsertedBy" Type="Int32" Nullable="false" />
+    <Property Name="ProductInsertedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="ProductIsFeatured" Type="Boolean" />
+    <Property Name="ProductStatus" Type="Int32" Nullable="false" />
+    <Property Name="ProductSale" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxId" Type="Int32" Nullable="false" />
+    <Property Name="ProductImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PurchasePrice" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Brands" Relationship="ClothModel.FK_tbl_Products_tbl_Brands" FromRole="tbl_Products" ToRole="tbl_Brands" />
+    <NavigationProperty Name="tbl_Orders" Relationship="ClothModel.FK_tbl_Orders_tbl_Products" FromRole="tbl_Products" ToRole="tbl_Orders" />
+    <NavigationProperty Name="tbl_ProductCategories" Relationship="ClothModel.FK_tbl_ProductCategories_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductCategories" />
+    <NavigationProperty Name="tbl_ProductDynamicAttributes" Relationship="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductDynamicAttributes" />
+    <NavigationProperty Name="tbl_ProductImages" Relationship="ClothModel.FK_tbl_ProductImages_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductImages" />
+    <NavigationProperty Name="tbl_ProductMetarialInfo" Relationship="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductMetarialInfo" />
+    <NavigationProperty Name="tbl_SalesTaxRates" Relationship="ClothModel.FK_tbl_Products_tbl_SalesTaxRates" FromRole="tbl_Products" ToRole="tbl_SalesTaxRates" />
+    <NavigationProperty Name="tbl_SalesTaxRates1" Relationship="ClothModel.FK_tbl_Products_tbl_SalesTaxRates1" FromRole="tbl_Products" ToRole="tbl_SalesTaxRates" />
+    <NavigationProperty Name="tbl_ProductsColors" Relationship="ClothModel.FK_tbl_ProductsColors_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductsColors" />
+    <NavigationProperty Name="tbl_ProductsGender" Relationship="ClothModel.FK_tbl_ProductsGender_tbl_Products" FromRole="tbl_Products" ToRole="tbl_ProductsGender" />
+  </EntityType>
+  <EntityType Name="tbl_ProductsColors">
+    <Key>
+      <PropertyRef Name="ProductColorId" />
+    </Key>
+    <Property Name="ProductColorId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="ColorId" Type="Int32" />
+    <NavigationProperty Name="tbl_Colors" Relationship="ClothModel.FK_tbl_ProductsColors_tbl_Colors" FromRole="tbl_ProductsColors" ToRole="tbl_Colors" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_ProductsColors_tbl_Products" FromRole="tbl_ProductsColors" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_ProductsGender">
+    <Key>
+      <PropertyRef Name="PGId" />
+    </Key>
+    <Property Name="PGId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PGProductId" Type="Int64" Nullable="false" />
+    <Property Name="PGGenderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_GenderCategories" Relationship="ClothModel.FK_tbl_ProductsGender_tbl_GenderCategories" FromRole="tbl_ProductsGender" ToRole="tbl_GenderCategories" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_ProductsGender_tbl_Products" FromRole="tbl_ProductsGender" ToRole="tbl_Products" />
+  </EntityType>
+  <EntityType Name="tbl_SalesTaxRates">
+    <Key>
+      <PropertyRef Name="SalesTaxId" />
+    </Key>
+    <Property Name="SalesTaxId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesTaxRate" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxSector" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalesTaxDescription" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="SalesTaxCreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxCreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SalesTaxLastUpdatedBy" Type="Int32" />
+    <Property Name="SalesTaxLastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="StoreId" Type="Int32" />
+    <NavigationProperty Name="tbl_Products" Relationship="ClothModel.FK_tbl_Products_tbl_SalesTaxRates" FromRole="tbl_SalesTaxRates" ToRole="tbl_Products" />
+    <NavigationProperty Name="tbl_Products1" Relationship="ClothModel.FK_tbl_Products_tbl_SalesTaxRates1" FromRole="tbl_SalesTaxRates" ToRole="tbl_Products" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_SalesTaxRates_tbl_Stores" FromRole="tbl_SalesTaxRates" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_SalesTaxRatesUpdation" Relationship="ClothModel.FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates" FromRole="tbl_SalesTaxRates" ToRole="tbl_SalesTaxRatesUpdation" />
+  </EntityType>
+  <EntityType Name="tbl_SalesTaxRatesUpdation">
+    <Key>
+      <PropertyRef Name="SalesTaxUpdationId" />
+    </Key>
+    <Property Name="SalesTaxUpdationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesTaxId" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxRate" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxSector" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalesTaxModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxLastUpdationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_SalesTaxRates" Relationship="ClothModel.FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates" FromRole="tbl_SalesTaxRatesUpdation" ToRole="tbl_SalesTaxRates" />
+  </EntityType>
+  <EntityType Name="tbl_Screens">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScreenName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_ScreensToGroup" Relationship="ClothModel.FK_tbl_ScreensToGroup_tbl_Screens" FromRole="tbl_Screens" ToRole="tbl_ScreensToGroup" />
+  </EntityType>
+  <EntityType Name="tbl_ScreensToGroup">
+    <Key>
+      <PropertyRef Name="GroupScreenId" />
+    </Key>
+    <Property Name="GroupScreenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScreenId" Type="Int32" Nullable="false" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Groups" Relationship="ClothModel.FK_tbl_ScreensToGroup_tbl_Groups" FromRole="tbl_ScreensToGroup" ToRole="tbl_Groups" />
+    <NavigationProperty Name="tbl_Screens" Relationship="ClothModel.FK_tbl_ScreensToGroup_tbl_Screens" FromRole="tbl_ScreensToGroup" ToRole="tbl_Screens" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_ScreensToGroup_tbl_Stores" FromRole="tbl_ScreensToGroup" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_StorePayment">
+    <Key>
+      <PropertyRef Name="StorePaymentId" />
+    </Key>
+    <Property Name="StorePaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Int32" />
+    <Property Name="StorePaymentFromDate" Type="DateTime" Precision="0" />
+    <Property Name="StorePaymentToDate" Type="DateTime" Precision="0" />
+    <Property Name="StorePayment" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="StorePaymentDate" Type="DateTime" Precision="0" />
+    <Property Name="StorePaymentInsertedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_StorePayment_tbl_Stores" FromRole="tbl_StorePayment" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_Stores">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreOwnerName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreOwnerContact" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreOwnerEmail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreDomainName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateId" Type="Int32" Nullable="false" />
+    <Property Name="PackageId" Type="Int32" Nullable="false" />
+    <Property Name="StoreLogo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreStatus" Type="Boolean" Nullable="false" />
+    <Property Name="StoreStatusComment" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreStatusUpdatedby" Type="Int32" />
+    <Property Name="StoreStatusUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="BillingTermId" Type="Int32" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="StoreCity" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StorePostCode" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SotreAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_BillingTerm" Relationship="ClothModel.FK_tbl_Stores_tbl_BillingTerm" FromRole="tbl_Stores" ToRole="tbl_BillingTerm" />
+    <NavigationProperty Name="tbl_Brands" Relationship="ClothModel.FK_tbl_Brands_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Brands" />
+    <NavigationProperty Name="tbl_Categories" Relationship="ClothModel.FK_tbl_Categories_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Categories" />
+    <NavigationProperty Name="tbl_Colors" Relationship="ClothModel.FK_tbl_Colors_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Colors" />
+    <NavigationProperty Name="tbl_Country" Relationship="ClothModel.FK_tbl_Stores_tbl_Country" FromRole="tbl_Stores" ToRole="tbl_Country" />
+    <NavigationProperty Name="tbl_Customers" Relationship="ClothModel.FK_tbl_Customers_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Customers" />
+    <NavigationProperty Name="tbl_GenderCategories" Relationship="ClothModel.FK_tbl_GenderCategories_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_GenderCategories" />
+    <NavigationProperty Name="tbl_Groups" Relationship="ClothModel.FK_tbl_Groups_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Groups" />
+    <NavigationProperty Name="tbl_HomePageBanners" Relationship="ClothModel.FK_tbl_HomePageBanners_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_HomePageBanners" />
+    <NavigationProperty Name="tbl_NextStorePaymentSchedule" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_NextStorePaymentSchedule" />
+    <NavigationProperty Name="tbl_NextStorePaymentSchedule1" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores1" FromRole="tbl_Stores" ToRole="tbl_NextStorePaymentSchedule" />
+    <NavigationProperty Name="tbl_Orders" Relationship="ClothModel.FK_tbl_Orders_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Orders" />
+    <NavigationProperty Name="tbl_Packages" Relationship="ClothModel.FK_tbl_Stores_tbl_Packages" FromRole="tbl_Stores" ToRole="tbl_Packages" />
+    <NavigationProperty Name="tbl_Pages" Relationship="ClothModel.FK_tbl_Pages_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Pages" />
+    <NavigationProperty Name="tbl_ProductDynamicCategories" Relationship="ClothModel.FK_tbl_ProductDynamicCategories_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_ProductDynamicCategories" />
+    <NavigationProperty Name="tbl_SalesTaxRates" Relationship="ClothModel.FK_tbl_SalesTaxRates_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_SalesTaxRates" />
+    <NavigationProperty Name="tbl_ScreensToGroup" Relationship="ClothModel.FK_tbl_ScreensToGroup_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_ScreensToGroup" />
+    <NavigationProperty Name="tbl_StorePayment" Relationship="ClothModel.FK_tbl_StorePayment_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_StorePayment" />
+    <NavigationProperty Name="tbl_Templates" Relationship="ClothModel.FK_tbl_Stores_tbl_Templates" FromRole="tbl_Stores" ToRole="tbl_Templates" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_Stores_tbl_Users" FromRole="tbl_Stores" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_Users1" Relationship="ClothModel.FK_tbl_Users_tbl_Stores" FromRole="tbl_Stores" ToRole="tbl_Users" />
+  </EntityType>
+  <EntityType Name="tbl_Templates">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TemplatePicture" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateLogoWidth" Type="Int32" Nullable="false" />
+    <Property Name="TemplateLogoHeight" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Stores_tbl_Templates" FromRole="tbl_Templates" ToRole="tbl_Stores" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserLoginId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserPwd" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="UserCreatedBy" Type="Int32" />
+    <Property Name="UserCreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserLastModifiedBy" Type="Int32" />
+    <Property Name="UserLastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="UserFullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserIdentityInformation" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="UserAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserGroupId" Type="Int32" Nullable="false" />
+    <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Brands" Relationship="ClothModel.FK_tbl_Brands_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Brands" />
+    <NavigationProperty Name="tbl_Brands1" Relationship="ClothModel.FK_tbl_Brands_tbl_Users1" FromRole="tbl_Users" ToRole="tbl_Brands" />
+    <NavigationProperty Name="tbl_Groups" Relationship="ClothModel.FK_tbl_Groups_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Groups" />
+    <NavigationProperty Name="tbl_Groups1" Relationship="ClothModel.FK_tbl_Users_tbl_Groups" FromRole="tbl_Users" ToRole="tbl_Groups" />
+    <NavigationProperty Name="tbl_HomePageBanners" Relationship="ClothModel.FK_tbl_HomePageBanners_tbl_Users" FromRole="tbl_Users" ToRole="tbl_HomePageBanners" />
+    <NavigationProperty Name="tbl_NextStorePaymentSchedule" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users" FromRole="tbl_Users" ToRole="tbl_NextStorePaymentSchedule" />
+    <NavigationProperty Name="tbl_NextStorePaymentSchedule1" Relationship="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users1" FromRole="tbl_Users" ToRole="tbl_NextStorePaymentSchedule" />
+    <NavigationProperty Name="tbl_Pages" Relationship="ClothModel.FK_tbl_Pages_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Pages" />
+    <NavigationProperty Name="tbl_Pages1" Relationship="ClothModel.FK_tbl_Pages_tbl_Users1" FromRole="tbl_Users" ToRole="tbl_Pages" />
+    <NavigationProperty Name="tbl_PagesUpdation" Relationship="ClothModel.FK_tbl_PagesUpdation_tbl_Users" FromRole="tbl_Users" ToRole="tbl_PagesUpdation" />
+    <NavigationProperty Name="tbl_Stores" Relationship="ClothModel.FK_tbl_Stores_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Stores1" Relationship="ClothModel.FK_tbl_Users_tbl_Stores" FromRole="tbl_Users" ToRole="tbl_Stores" />
+    <NavigationProperty Name="tbl_Users1" Relationship="ClothModel.FK_tbl_Users_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Users1" />
+    <NavigationProperty Name="tbl_Users2" Relationship="ClothModel.FK_tbl_Users_tbl_Users" FromRole="tbl_Users1" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_Users11" Relationship="ClothModel.FK_tbl_Users_tbl_Users1" FromRole="tbl_Users" ToRole="tbl_Users1" />
+    <NavigationProperty Name="tbl_Users3" Relationship="ClothModel.FK_tbl_Users_tbl_Users1" FromRole="tbl_Users1" ToRole="tbl_Users" />
+    <NavigationProperty Name="tbl_UsersUpdation" Relationship="ClothModel.FK_tbl_UsersUpdation_tbl_Users" FromRole="tbl_Users" ToRole="tbl_UsersUpdation" />
+  </EntityType>
+  <EntityType Name="tbl_UsersUpdation">
+    <Key>
+      <PropertyRef Name="UserUpdationId" />
+    </Key>
+    <Property Name="UserUpdationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserPwd" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="UserLastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="UserLastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserFullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserIdentityInformation" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="UserAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserGroupId" Type="Int32" Nullable="false" />
+    <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Users" Relationship="ClothModel.FK_tbl_UsersUpdation_tbl_Users" FromRole="tbl_UsersUpdation" ToRole="tbl_Users" />
+  </EntityType>
+  <Association Name="FK_tbl_Stores_tbl_BillingTerm">
+    <End Type="ClothModel.tbl_BillingTerm" Role="tbl_BillingTerm" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BillingTerm">
+        <PropertyRef Name="BTId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="BillingTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Brands_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Brands" Role="tbl_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Brands">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Brands_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Brands" Role="tbl_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Brands">
+        <PropertyRef Name="BrandUploadedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Brands_tbl_Users1">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_Brands" Role="tbl_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Brands">
+        <PropertyRef Name="BrandLastUpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BrandsUpdation_tbl_Brands">
+    <End Type="ClothModel.tbl_Brands" Role="tbl_Brands" Multiplicity="1" />
+    <End Type="ClothModel.tbl_BrandsUpdation" Role="tbl_BrandsUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brands">
+        <PropertyRef Name="BrandId" />
+      </Principal>
+      <Dependent Role="tbl_BrandsUpdation">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_Brands">
+    <End Type="ClothModel.tbl_Brands" Role="tbl_Brands" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brands">
+        <PropertyRef Name="BrandId" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="ProductBrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Categories_tbl_Categories">
+    <End Type="ClothModel.tbl_Categories" Role="tbl_Categories" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_Categories" Role="tbl_Categories1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="tbl_Categories1">
+        <PropertyRef Name="CatParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Categories_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Categories" Role="tbl_Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Categories">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CategoriesUpdationRecord_tbl_Categories">
+    <End Type="ClothModel.tbl_Categories" Role="tbl_Categories" Multiplicity="1" />
+    <End Type="ClothModel.tbl_CategoriesUpdationRecord" Role="tbl_CategoriesUpdationRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="tbl_CategoriesUpdationRecord">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductCategories_tbl_Categories">
+    <End Type="ClothModel.tbl_Categories" Role="tbl_Categories" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductCategories" Role="tbl_ProductCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="tbl_ProductCategories">
+        <PropertyRef Name="PCCatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Colors_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Colors" Role="tbl_Colors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Colors">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsColors_tbl_Colors">
+    <End Type="ClothModel.tbl_Colors" Role="tbl_Colors" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_ProductsColors" Role="tbl_ProductsColors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Colors">
+        <PropertyRef Name="ColorId" />
+      </Principal>
+      <Dependent Role="tbl_ProductsColors">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Customers_tbl_Country1">
+    <End Type="ClothModel.tbl_Country" Role="tbl_Country" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Customers" Role="tbl_Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="tbl_Customers">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Country">
+    <End Type="ClothModel.tbl_Country" Role="tbl_Country" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Customers_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Customers" Role="tbl_Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Customers">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_GenderCategories_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_GenderCategories" Role="tbl_GenderCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_GenderCategories">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsGender_tbl_GenderCategories">
+    <End Type="ClothModel.tbl_GenderCategories" Role="tbl_GenderCategories" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductsGender" Role="tbl_ProductsGender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_GenderCategories">
+        <PropertyRef Name="GenderCatId" />
+      </Principal>
+      <Dependent Role="tbl_ProductsGender">
+        <PropertyRef Name="PGGenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Groups_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Groups" Role="tbl_Groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Groups">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Groups_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Groups" Role="tbl_Groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Groups">
+        <PropertyRef Name="GroupCreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ScreensToGroup_tbl_Groups">
+    <End Type="ClothModel.tbl_Groups" Role="tbl_Groups" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ScreensToGroup" Role="tbl_ScreensToGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Groups">
+        <PropertyRef Name="GroupId" />
+      </Principal>
+      <Dependent Role="tbl_ScreensToGroup">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Groups">
+    <End Type="ClothModel.tbl_Groups" Role="tbl_Groups" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Groups">
+        <PropertyRef Name="GroupId" />
+      </Principal>
+      <Dependent Role="tbl_Users">
+        <PropertyRef Name="UserGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_HomePageBanners_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_HomePageBanners" Role="tbl_HomePageBanners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_HomePageBanners">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_HomePageBanners_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+    <End Type="ClothModel.tbl_HomePageBanners" Role="tbl_HomePageBanners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_HomePageBanners">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductMetarialInfo_tbl_Metarial">
+    <End Type="ClothModel.tbl_Metarial" Role="tbl_Metarial" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_ProductMetarialInfo" Role="tbl_ProductMetarialInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Metarial">
+        <PropertyRef Name="meterialId" />
+      </Principal>
+      <Dependent Role="tbl_ProductMetarialInfo">
+        <PropertyRef Name="metarialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_NextStorePaymentSchedule" Role="tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Stores1">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_NextStorePaymentSchedule" Role="tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_NextStorePaymentSchedule" Role="tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_NextStorePaymentSchedule_tbl_Users1">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+    <End Type="ClothModel.tbl_NextStorePaymentSchedule" Role="tbl_NextStorePaymentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_NextStorePaymentSchedule">
+        <PropertyRef Name="InsertedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_PaymentMethods">
+    <End Type="ClothModel.tbl_PaymentMethods" Role="tbl_PaymentMethods" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Orders" Role="tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PaymentMethods">
+        <PropertyRef Name="PaymentMethodId" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="PaymentMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Orders" Role="tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Orders_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Orders" Role="tbl_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Orders">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrdersUpdation_tbl_Orders">
+    <End Type="ClothModel.tbl_Orders" Role="tbl_Orders" Multiplicity="1" />
+    <End Type="ClothModel.tbl_OrdersUpdation" Role="tbl_OrdersUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="tbl_OrdersUpdation">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Packages">
+    <End Type="ClothModel.tbl_Packages" Role="tbl_Packages" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Packages">
+        <PropertyRef Name="PackageId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="PackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Pages_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Pages" Role="tbl_Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Pages">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Pages_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Pages" Role="tbl_Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Pages">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Pages_tbl_Users1">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_Pages" Role="tbl_Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Pages">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PagesUpdation_tbl_Pages">
+    <End Type="ClothModel.tbl_Pages" Role="tbl_Pages" Multiplicity="1" />
+    <End Type="ClothModel.tbl_PagesUpdation" Role="tbl_PagesUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Pages">
+        <PropertyRef Name="PageId" />
+      </Principal>
+      <Dependent Role="tbl_PagesUpdation">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PagesUpdation_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_PagesUpdation" Role="tbl_PagesUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_PagesUpdation">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductCategories_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductCategories" Role="tbl_ProductCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductCategories">
+        <PropertyRef Name="PCProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories">
+    <End Type="ClothModel.tbl_ProductDynamicCategories" Role="tbl_ProductDynamicCategories" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductDynamicAttributes" Role="tbl_ProductDynamicAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ProductDynamicCategories">
+        <PropertyRef Name="PDCId" />
+      </Principal>
+      <Dependent Role="tbl_ProductDynamicAttributes">
+        <PropertyRef Name="PDCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductDynamicAttributes_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductDynamicAttributes" Role="tbl_ProductDynamicAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductDynamicAttributes">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductDynamicCategories_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductDynamicCategories" Role="tbl_ProductDynamicCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_ProductDynamicCategories">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductImages_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductImages" Role="tbl_ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductImages">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductMetarialInfo_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_ProductMetarialInfo" Role="tbl_ProductMetarialInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductMetarialInfo">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_SalesTaxRates">
+    <End Type="ClothModel.tbl_SalesTaxRates" Role="tbl_SalesTaxRates" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SalesTaxRates">
+        <PropertyRef Name="SalesTaxId" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SalesTaxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Products_tbl_SalesTaxRates1">
+    <End Type="ClothModel.tbl_SalesTaxRates" Role="tbl_SalesTaxRates" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SalesTaxRates">
+        <PropertyRef Name="SalesTaxId" />
+      </Principal>
+      <Dependent Role="tbl_Products">
+        <PropertyRef Name="SalesTaxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsColors_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_ProductsColors" Role="tbl_ProductsColors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductsColors">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ProductsGender_tbl_Products">
+    <End Type="ClothModel.tbl_Products" Role="tbl_Products" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ProductsGender" Role="tbl_ProductsGender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tbl_ProductsGender">
+        <PropertyRef Name="PGProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SalesTaxRates_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_SalesTaxRates" Role="tbl_SalesTaxRates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_SalesTaxRates">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates">
+    <End Type="ClothModel.tbl_SalesTaxRates" Role="tbl_SalesTaxRates" Multiplicity="1" />
+    <End Type="ClothModel.tbl_SalesTaxRatesUpdation" Role="tbl_SalesTaxRatesUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SalesTaxRates">
+        <PropertyRef Name="SalesTaxId" />
+      </Principal>
+      <Dependent Role="tbl_SalesTaxRatesUpdation">
+        <PropertyRef Name="SalesTaxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ScreensToGroup_tbl_Screens">
+    <End Type="ClothModel.tbl_Screens" Role="tbl_Screens" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ScreensToGroup" Role="tbl_ScreensToGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Screens">
+        <PropertyRef Name="ScreenId" />
+      </Principal>
+      <Dependent Role="tbl_ScreensToGroup">
+        <PropertyRef Name="ScreenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ScreensToGroup_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_ScreensToGroup" Role="tbl_ScreensToGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_ScreensToGroup">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_StorePayment_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_StorePayment" Role="tbl_StorePayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_StorePayment">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Templates">
+    <End Type="ClothModel.tbl_Templates" Role="tbl_Templates" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Templates">
+        <PropertyRef Name="TemplateId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stores_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Stores">
+        <PropertyRef Name="StoreStatusUpdatedby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Stores">
+    <End Type="ClothModel.tbl_Stores" Role="tbl_Stores" Multiplicity="1" />
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stores">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="tbl_Users">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Users1">
+        <PropertyRef Name="UserCreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Users_tbl_Users1">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Users1">
+        <PropertyRef Name="UserLastModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UsersUpdation_tbl_Users">
+    <End Type="ClothModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+    <End Type="ClothModel.tbl_UsersUpdation" Role="tbl_UsersUpdation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_UsersUpdation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_ProductSearch_Result">
+    <Property Type="Int64" Name="RowNumber" Nullable="true" />
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ProductDescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ProductBrandId" Nullable="false" />
+    <Property Type="Decimal" Name="ProductUnitPrice" Nullable="false" Precision="19" />
+    <Property Type="String" Name="ProductPriceDescription" Nullable="true" MaxLength="200" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="ProductInsertedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ProductInsertedDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_SearchProduct_Result">
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Int32" Name="SalesTaxId" Nullable="false" />
+    <Property Type="Decimal" Name="ProductUnitPrice" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="ProductStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProductSale" Nullable="false" />
+    <Property Type="String" Name="ProductPriceDescription" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="ProductIsFeatured" Nullable="true" />
+    <Property Type="Int64" Name="ProductInStock" Nullable="false" />
+    <Property Type="DateTime" Name="ProductInsertedDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="ProductInsertedBy" Nullable="false" />
+    <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ProductDescription" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ProductBrandId" Nullable="false" />
+    <Property Type="Int32" Name="PurchasePrice" Nullable="false" />
+    <Property Type="Int32" Name="BrandId" Nullable="false" />
+    <Property Type="String" Name="BrandName" Nullable="false" MaxLength="100" />
+  </ComplexType>
+</Schema>

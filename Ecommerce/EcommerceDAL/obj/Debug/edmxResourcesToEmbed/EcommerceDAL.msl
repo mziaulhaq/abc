@@ -1,0 +1,1067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClothModelStoreContainer" CdmEntityContainer="ClothEntities">
+    <FunctionImportMapping FunctionImportName="ReturnBrandsUpdateInformation" FunctionName="ClothModel.Store.SP_BrandsUpdationRecord">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.BrandsUpdateInformation">
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+          <ScalarProperty Name="BrandsModifiedDate" ColumnName="BrandsModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrandToUserInformation" FunctionName="ClothModel.Store.SP_Brands_GetInformation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.BrandsToUserInformation">
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+          <ScalarProperty Name="BrandUploadedDate" ColumnName="BrandUploadedDate" />
+          <ScalarProperty Name="BrandUploadedBy" ColumnName="BrandUploadedBy" />
+          <ScalarProperty Name="BrandLastUpdatedBy" ColumnName="BrandLastUpdatedBy" />
+          <ScalarProperty Name="BrandLastUpdatedDate" ColumnName="BrandLastUpdatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="IsUserActive" ColumnName="IsUserActive" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Categories_GetACategoryChildCategories" FunctionName="ClothModel.Store.SP_Categories_GetACategoryChildCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Categories">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Categories_GetAllCategories" FunctionName="ClothModel.Store.SP_Categories_GetAllCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Categories">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Categories_GetAllInActiveCategories" FunctionName="ClothModel.Store.SP_Categories_GetAllInActiveCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Categories">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Categories_SearchWithInCategory" FunctionName="ClothModel.Store.SP_Categories_SearchWithInCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Categories">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Product_GetAProductCategories" FunctionName="ClothModel.Store.SP_Product_GetAProductCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.ProductToCategories">
+          <ScalarProperty Name="PCCatId" ColumnName="PCCatId" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllActiveCategoriesNotBindToAProduct" FunctionName="ClothModel.Store.SP_Categories_GetAllActiveCategoriesNotBindToAProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Categories">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllColorsNotBindToProduct" FunctionName="ClothModel.Store.SP_Color_GetAllColorsNotBindToProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Colors">
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllGenderNotBindToProduct" FunctionName="ClothModel.Store.SP_Gender_GetAllGenderNotBindToProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Genders">
+          <ScalarProperty Name="GenderCatId" ColumnName="GenderCatId" />
+          <ScalarProperty Name="GenderCatName" ColumnName="GenderCatName" />
+          <ScalarProperty Name="GenderCatDescription" ColumnName="GenderCatDescription" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDistinctDynamicCatNotBindToProduct" FunctionName="ClothModel.Store.SP_DynamicCategories_GetDistinctNotBindToProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.DynamicCategories">
+          <ScalarProperty Name="PCDName" ColumnName="PCDName" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllDynamicCategoriesofProduct" FunctionName="ClothModel.Store.SP_DynamicCategories_GetAllDCofProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.ProductDynamicCategories">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PDCValue" ColumnName="PDCValue" />
+          <ScalarProperty Name="PDAId" ColumnName="PDAId" />
+          <ScalarProperty Name="PDCId" ColumnName="PDCId" />
+          <ScalarProperty Name="PCDName" ColumnName="PCDName" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AuthenticateUser" FunctionName="ClothModel.Store.SP_AuthenticateUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserCreatedBy" ColumnName="UserCreatedBy" />
+          <ScalarProperty Name="UserCreatedDate" ColumnName="UserCreatedDate" />
+          <ScalarProperty Name="UserLastModifiedBy" ColumnName="UserLastModifiedBy" />
+          <ScalarProperty Name="UserLastModifiedDate" ColumnName="UserLastModifiedDate" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserIdentityInformation" ColumnName="UserIdentityInformation" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetGroupAuthorizedScreens" FunctionName="ClothModel.Store.SP_GetAllAuthorizedScreens">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.Screens">
+          <ScalarProperty Name="screenName" ColumnName="screenName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllUsers" FunctionName="ClothModel.Store.Sp_GetAllUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.UsersInfo">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupStatus" ColumnName="GroupStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CalculateProductPrice" FunctionName="ClothModel.Store.SP_CalculateProductPrice" />
+    <FunctionImportMapping FunctionImportName="SP_GetSalesTaxRateForProduct" FunctionName="ClothModel.Store.SP_GetSalesTaxRateForProduct" />
+    <FunctionImportMapping FunctionImportName="SP_ConfirmOrder" FunctionName="ClothModel.Store.SP_ConfirmOrder" />
+    <FunctionImportMapping FunctionImportName="SP_RejectOrderAfterConfirmation" FunctionName="ClothModel.Store.SP_RejectOrderAfterConfirmation" />
+    <FunctionImportMapping FunctionImportName="SP_SalesReportByDate" FunctionName="ClothModel.Store.SP_SalesReportByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SalesReportByDate">
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ROWNUMBER" ColumnName="ROWNUMBER" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SalesReportByProduct" FunctionName="ClothModel.Store.SP_SalesReportByProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SalesReportByProduct">
+          <ScalarProperty Name="ROWNUMBER" ColumnName="ROWNUMBER" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PriceAtOrderTime" ColumnName="PriceAtOrderTime" />
+          <ScalarProperty Name="SalesAtOrderTime" ColumnName="SalesAtOrderTime" />
+          <ScalarProperty Name="SalesTaxAtOrderTime" ColumnName="SalesTaxAtOrderTime" />
+          <ScalarProperty Name="PurchasedPrice" ColumnName="PurchasedPrice" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderConfirmationDate" ColumnName="OrderConfirmationDate" />
+          <ScalarProperty Name="SingleProfit" ColumnName="SingleProfit" />
+          <ScalarProperty Name="TotalProfit" ColumnName="TotalProfit" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SalesReportByDateForDownload" FunctionName="ClothModel.Store.SP_SalesReportByDateForDownload">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SalesReportByDateForDownload">
+          <ScalarProperty Name="ROWNUMBER" ColumnName="ROWNUMBER" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SalesReportByProductForDownload" FunctionName="ClothModel.Store.SP_SalesReportByProductForDownload">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SalesReportByProductForDownload">
+          <ScalarProperty Name="ROWNUMBER" ColumnName="ROWNUMBER" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PriceAtOrderTime" ColumnName="PriceAtOrderTime" />
+          <ScalarProperty Name="SalesAtOrderTime" ColumnName="SalesAtOrderTime" />
+          <ScalarProperty Name="SalesTaxAtOrderTime" ColumnName="SalesTaxAtOrderTime" />
+          <ScalarProperty Name="PurchasedPrice" ColumnName="PurchasedPrice" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderConfirmationDate" ColumnName="OrderConfirmationDate" />
+          <ScalarProperty Name="SingleProfit" ColumnName="SingleProfit" />
+          <ScalarProperty Name="TotalProfit" ColumnName="TotalProfit" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStoreInformation" FunctionName="ClothModel.Store.SP_GetStoreInformation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.StoreInformation">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StoreOwnerName" ColumnName="StoreOwnerName" />
+          <ScalarProperty Name="StoreOwnerContact" ColumnName="StoreOwnerContact" />
+          <ScalarProperty Name="StoreOwnerEmail" ColumnName="StoreOwnerEmail" />
+          <ScalarProperty Name="StoreDomainName" ColumnName="StoreDomainName" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="StoreLogo" ColumnName="StoreLogo" />
+          <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+          <ScalarProperty Name="StoreStatusComment" ColumnName="StoreStatusComment" />
+          <ScalarProperty Name="StoreStatusUpdatedby" ColumnName="StoreStatusUpdatedby" />
+          <ScalarProperty Name="StoreStatusUpdatedDate" ColumnName="StoreStatusUpdatedDate" />
+          <ScalarProperty Name="BillingTermId" ColumnName="BillingTermId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StoreCity" ColumnName="StoreCity" />
+          <ScalarProperty Name="StorePostCode" ColumnName="StorePostCode" />
+          <ScalarProperty Name="StoreContact" ColumnName="StoreContact" />
+          <ScalarProperty Name="SotreAddress" ColumnName="SotreAddress" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_OrderStatus_Customer" FunctionName="ClothModel.Store.SP_OrderStatus_Customer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_OrderStatus_Customer_Result">
+          <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderConfirmation" ColumnName="OrderConfirmation" />
+          <ScalarProperty Name="OrderConfirmationDate" ColumnName="OrderConfirmationDate" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderStatusUpdateDate" ColumnName="OrderStatusUpdateDate" />
+          <ScalarProperty Name="SalesAtOrderTime" ColumnName="SalesAtOrderTime" />
+          <ScalarProperty Name="SalesTaxAtOrderTime" ColumnName="SalesTaxAtOrderTime" />
+          <ScalarProperty Name="PriceAtOrderTime" ColumnName="PriceAtOrderTime" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetSubmittedtOrdersByOrderId" FunctionName="ClothModel.Store.SP_GetSubmittedtOrdersByOrderId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_GetSubmittedtOrdersByOrderId_Result">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PriceAtOrderTime" ColumnName="PriceAtOrderTime" />
+          <ScalarProperty Name="SalesAtOrderTime" ColumnName="SalesAtOrderTime" />
+          <ScalarProperty Name="SalesTaxAtOrderTime" ColumnName="SalesTaxAtOrderTime" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderConfirmation" ColumnName="OrderConfirmation" />
+          <ScalarProperty Name="OrderConfirmationDate" ColumnName="OrderConfirmationDate" />
+          <ScalarProperty Name="OrderConfirmBy" ColumnName="OrderConfirmBy" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderStatusUpdateBy" ColumnName="OrderStatusUpdateBy" />
+          <ScalarProperty Name="OrderStatusUpdateDate" ColumnName="OrderStatusUpdateDate" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductInStock" ColumnName="ProductInStock" />
+          <ScalarProperty Name="ProductIsFeatured" ColumnName="ProductIsFeatured" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="ProvinceOrState" ColumnName="ProvinceOrState" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetSubmittedtOrders" FunctionName="ClothModel.Store.SP_GetSubmittedtOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_GetSubmittedtOrders_Result1">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PriceAtOrderTime" ColumnName="PriceAtOrderTime" />
+          <ScalarProperty Name="SalesAtOrderTime" ColumnName="SalesAtOrderTime" />
+          <ScalarProperty Name="SalesTaxAtOrderTime" ColumnName="SalesTaxAtOrderTime" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderConfirmation" ColumnName="OrderConfirmation" />
+          <ScalarProperty Name="OrderConfirmationDate" ColumnName="OrderConfirmationDate" />
+          <ScalarProperty Name="OrderConfirmBy" ColumnName="OrderConfirmBy" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderStatusUpdateBy" ColumnName="OrderStatusUpdateBy" />
+          <ScalarProperty Name="OrderStatusUpdateDate" ColumnName="OrderStatusUpdateDate" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductInStock" ColumnName="ProductInStock" />
+          <ScalarProperty Name="ProductIsFeatured" ColumnName="ProductIsFeatured" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="ProvinceOrState" ColumnName="ProvinceOrState" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Categories_GetAllActiveCategories" FunctionName="ClothModel.Store.SP_Categories_GetAllActiveCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_Categories_GetAllActiveCategories_Result1">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatHierarchy" ColumnName="CatHierarchy" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="ShowOrder" ColumnName="ShowOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Materials_GetAllMaterialsNotBindToProduct" FunctionName="ClothModel.Store.SP_Materials_GetAllMaterialsNotBindToProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_Materials_GetAllMaterialsNotBindToProduct_Result">
+          <ScalarProperty Name="meterialId" ColumnName="meterialId" />
+          <ScalarProperty Name="meterialName" ColumnName="meterialName" />
+          <ScalarProperty Name="meterialDescription" ColumnName="meterialDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCustomerInfo" FunctionName="ClothModel.Store.SP_GetCustomerInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_GetCustomerInfo_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ProvinceOrState" ColumnName="ProvinceOrState" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ProductSearchFront" FunctionName="ClothModel.Store.SP_ProductSearchFront">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ProductSearchFront_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="productname" ColumnName="productname" />
+          <ScalarProperty Name="productdescription" ColumnName="productdescription" />
+          <ScalarProperty Name="productbrandid" ColumnName="productbrandid" />
+          <ScalarProperty Name="productunitprice" ColumnName="productunitprice" />
+          <ScalarProperty Name="productpricedescription" ColumnName="productpricedescription" />
+          <ScalarProperty Name="productinstock" ColumnName="productinstock" />
+          <ScalarProperty Name="productimage" ColumnName="productimage" />
+          <ScalarProperty Name="productinsertedby" ColumnName="productinsertedby" />
+          <ScalarProperty Name="productinserteddate" ColumnName="productinserteddate" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="productisfeatured" ColumnName="productisfeatured" />
+          <ScalarProperty Name="productstatus" ColumnName="productstatus" />
+          <ScalarProperty Name="productsale" ColumnName="productsale" />
+          <ScalarProperty Name="salestaxid" ColumnName="salestaxid" />
+          <ScalarProperty Name="brandid" ColumnName="brandid" />
+          <ScalarProperty Name="brandname" ColumnName="brandname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_AdvanceSearch" FunctionName="ClothModel.Store.SP_AdvanceSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_AdvanceSearch_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductBrandId" ColumnName="ProductBrandId" />
+          <ScalarProperty Name="ProductUnitPrice" ColumnName="ProductUnitPrice" />
+          <ScalarProperty Name="ProductPriceDescription" ColumnName="ProductPriceDescription" />
+          <ScalarProperty Name="ProductInStock" ColumnName="ProductInStock" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductInsertedBy" ColumnName="ProductInsertedBy" />
+          <ScalarProperty Name="ProductInsertedDate" ColumnName="ProductInsertedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="ProductIsFeatured" ColumnName="ProductIsFeatured" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ReturnBrandsWithNoOfProducts" FunctionName="ClothModel.Store.SP_ReturnBrandsWithNoOfProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ReturnBrandsWithNoOfProducts_Result">
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ReturnColorsWithNoOfProducts" FunctionName="ClothModel.Store.SP_ReturnColorsWithNoOfProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ReturnColorsWithNoOfProducts_Result">
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ReturnGenderWithNoOfProducts" FunctionName="ClothModel.Store.SP_ReturnGenderWithNoOfProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ReturnGenderWithNoOfProducts_Result">
+          <ScalarProperty Name="GenderCatId" ColumnName="GenderCatId" />
+          <ScalarProperty Name="ProductGender" ColumnName="ProductGender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ReturnMetarialWithNoOfProducts" FunctionName="ClothModel.Store.SP_ReturnMetarialWithNoOfProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ReturnMetarialWithNoOfProducts_Result">
+          <ScalarProperty Name="meterialId" ColumnName="meterialId" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ReturnTypeWithNoOfProducts" FunctionName="ClothModel.Store.SP_ReturnTypeWithNoOfProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ReturnTypeWithNoOfProducts_Result">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_BillingTerm">
+      <EntityTypeMapping TypeName="ClothModel.tbl_BillingTerm">
+        <MappingFragment StoreEntitySet="tbl_BillingTerm">
+          <ScalarProperty Name="BTDuration" ColumnName="BTDuration" />
+          <ScalarProperty Name="BTBill" ColumnName="BTBill" />
+          <ScalarProperty Name="BTTitle" ColumnName="BTTitle" />
+          <ScalarProperty Name="BTId" ColumnName="BTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Brands">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Brands">
+        <MappingFragment StoreEntitySet="tbl_Brands">
+          <ScalarProperty Name="BrandImage" ColumnName="BrandImage" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="BrandLastUpdatedDate" ColumnName="BrandLastUpdatedDate" />
+          <ScalarProperty Name="BrandLastUpdatedBy" ColumnName="BrandLastUpdatedBy" />
+          <ScalarProperty Name="BrandUploadedBy" ColumnName="BrandUploadedBy" />
+          <ScalarProperty Name="BrandUploadedDate" ColumnName="BrandUploadedDate" />
+          <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BrandsUpdation">
+      <EntityTypeMapping TypeName="ClothModel.tbl_BrandsUpdation">
+        <MappingFragment StoreEntitySet="tbl_BrandsUpdation">
+          <ScalarProperty Name="BrandImage" ColumnName="BrandImage" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BrandsModifiedDate" ColumnName="BrandsModifiedDate" />
+          <ScalarProperty Name="BrandsModifiedBy" ColumnName="BrandsModifiedBy" />
+          <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="BrandUpdationId" ColumnName="BrandUpdationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Categories">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Categories">
+        <MappingFragment StoreEntitySet="tbl_Categories">
+          <ScalarProperty Name="ShowOrder" ColumnName="ShowOrder" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CatLastModifiedDate" ColumnName="CatLastModifiedDate" />
+          <ScalarProperty Name="CatLastModifiedBy" ColumnName="CatLastModifiedBy" />
+          <ScalarProperty Name="CatCreatedDate" ColumnName="CatCreatedDate" />
+          <ScalarProperty Name="CatCreatedBy" ColumnName="CatCreatedBy" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CategoriesUpdationRecord">
+      <EntityTypeMapping TypeName="ClothModel.tbl_CategoriesUpdationRecord">
+        <MappingFragment StoreEntitySet="tbl_CategoriesUpdationRecord">
+          <ScalarProperty Name="CatModifiedBy" ColumnName="CatModifiedBy" />
+          <ScalarProperty Name="CatModifiedDate" ColumnName="CatModifiedDate" />
+          <ScalarProperty Name="CatIsActive" ColumnName="CatIsActive" />
+          <ScalarProperty Name="CatParent" ColumnName="CatParent" />
+          <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="CatUpdationRecord" ColumnName="CatUpdationRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Colors">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Colors">
+        <MappingFragment StoreEntitySet="tbl_Colors">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Country">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Country">
+        <MappingFragment StoreEntitySet="tbl_Country">
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Customers">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Customers">
+        <MappingFragment StoreEntitySet="tbl_Customers">
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="ProvinceOrState" ColumnName="ProvinceOrState" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_GenderCategories">
+      <EntityTypeMapping TypeName="ClothModel.tbl_GenderCategories">
+        <MappingFragment StoreEntitySet="tbl_GenderCategories">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="GenderCatDescription" ColumnName="GenderCatDescription" />
+          <ScalarProperty Name="GenderCatName" ColumnName="GenderCatName" />
+          <ScalarProperty Name="GenderCatId" ColumnName="GenderCatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Groups">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Groups">
+        <MappingFragment StoreEntitySet="tbl_Groups">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="GroupCreatedDate" ColumnName="GroupCreatedDate" />
+          <ScalarProperty Name="GroupCreatedBy" ColumnName="GroupCreatedBy" />
+          <ScalarProperty Name="GroupDescription" ColumnName="GroupDescription" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_HomePageBanners">
+      <EntityTypeMapping TypeName="ClothModel.tbl_HomePageBanners">
+        <MappingFragment StoreEntitySet="tbl_HomePageBanners">
+          <ScalarProperty Name="BannerOrder" ColumnName="BannerOrder" />
+          <ScalarProperty Name="LinkPath" ColumnName="LinkPath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BannerImage" ColumnName="BannerImage" />
+          <ScalarProperty Name="HPBId" ColumnName="HPBId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Metarial">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Metarial">
+        <MappingFragment StoreEntitySet="tbl_Metarial">
+          <ScalarProperty Name="meterialDescription" ColumnName="meterialDescription" />
+          <ScalarProperty Name="meterialName" ColumnName="meterialName" />
+          <ScalarProperty Name="meterialId" ColumnName="meterialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NextStorePaymentSchedule">
+      <EntityTypeMapping TypeName="ClothModel.tbl_NextStorePaymentSchedule">
+        <MappingFragment StoreEntitySet="tbl_NextStorePaymentSchedule">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertionDate" ColumnName="InsertionDate" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="NextPSId" ColumnName="NextPSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Orders">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Orders">
+        <MappingFragment StoreEntitySet="tbl_Orders">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="RefStoreId" ColumnName="RefStoreId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="OrderStatusUpdateDate" ColumnName="OrderStatusUpdateDate" />
+          <ScalarProperty Name="OrderStatusUpdateBy" ColumnName="OrderStatusUpdateBy" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderConfirmBy" ColumnName="OrderConfirmBy" />
+          <ScalarProperty Name="OrderConfirmationDate" ColumnName="OrderConfirmationDate" />
+          <ScalarProperty Name="OrderConfirmation" ColumnName="OrderConfirmation" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="PurchasedPrice" ColumnName="PurchasedPrice" />
+          <ScalarProperty Name="SalesTaxAtOrderTime" ColumnName="SalesTaxAtOrderTime" />
+          <ScalarProperty Name="SalesAtOrderTime" ColumnName="SalesAtOrderTime" />
+          <ScalarProperty Name="PriceAtOrderTime" ColumnName="PriceAtOrderTime" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OrdersUpdation">
+      <EntityTypeMapping TypeName="ClothModel.tbl_OrdersUpdation">
+        <MappingFragment StoreEntitySet="tbl_OrdersUpdation">
+          <ScalarProperty Name="OrderStatusUpdatedDate" ColumnName="OrderStatusUpdatedDate" />
+          <ScalarProperty Name="OrderStatusUpdateBy" ColumnName="OrderStatusUpdateBy" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderUpdationId" ColumnName="OrderUpdationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Packages">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Packages">
+        <MappingFragment StoreEntitySet="tbl_Packages">
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="PackageTransactionPercentage" ColumnName="PackageTransactionPercentage" />
+          <ScalarProperty Name="PackagePerMonthCost" ColumnName="PackagePerMonthCost" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Pages">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Pages">
+        <MappingFragment StoreEntitySet="tbl_Pages">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PagesUpdation">
+      <EntityTypeMapping TypeName="ClothModel.tbl_PagesUpdation">
+        <MappingFragment StoreEntitySet="tbl_PagesUpdation">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="UpdationId" ColumnName="UpdationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PaymentMethods">
+      <EntityTypeMapping TypeName="ClothModel.tbl_PaymentMethods">
+        <MappingFragment StoreEntitySet="tbl_PaymentMethods">
+          <ScalarProperty Name="PaymentMethodDesc" ColumnName="PaymentMethodDesc" />
+          <ScalarProperty Name="PaymentMethodName" ColumnName="PaymentMethodName" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductCategories">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductCategories">
+        <MappingFragment StoreEntitySet="tbl_ProductCategories">
+          <ScalarProperty Name="PCCatId" ColumnName="PCCatId" />
+          <ScalarProperty Name="PCProductId" ColumnName="PCProductId" />
+          <ScalarProperty Name="PCId" ColumnName="PCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductDynamicAttributes">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductDynamicAttributes">
+        <MappingFragment StoreEntitySet="tbl_ProductDynamicAttributes">
+          <ScalarProperty Name="PDCValue" ColumnName="PDCValue" />
+          <ScalarProperty Name="PDCId" ColumnName="PDCId" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PDAId" ColumnName="PDAId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductDynamicCategories">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductDynamicCategories">
+        <MappingFragment StoreEntitySet="tbl_ProductDynamicCategories">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="PCDName" ColumnName="PCDName" />
+          <ScalarProperty Name="PDCId" ColumnName="PDCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductImages">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductImages">
+        <MappingFragment StoreEntitySet="tbl_ProductImages">
+          <ScalarProperty Name="ImageOrderId" ColumnName="ImageOrderId" />
+          <ScalarProperty Name="ImagePathThumbNail" ColumnName="ImagePathThumbNail" />
+          <ScalarProperty Name="ImagePathLarge" ColumnName="ImagePathLarge" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductImageId" ColumnName="ProductImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductMetarialInfo">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductMetarialInfo">
+        <MappingFragment StoreEntitySet="tbl_ProductMetarialInfo">
+          <ScalarProperty Name="metarialId" ColumnName="metarialId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productMetarialId" ColumnName="productMetarialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Products">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Products">
+        <MappingFragment StoreEntitySet="tbl_Products">
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductIsFeatured" ColumnName="ProductIsFeatured" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="ProductInsertedDate" ColumnName="ProductInsertedDate" />
+          <ScalarProperty Name="ProductInsertedBy" ColumnName="ProductInsertedBy" />
+          <ScalarProperty Name="ProductInStock" ColumnName="ProductInStock" />
+          <ScalarProperty Name="ProductPriceDescription" ColumnName="ProductPriceDescription" />
+          <ScalarProperty Name="ProductUnitPrice" ColumnName="ProductUnitPrice" />
+          <ScalarProperty Name="ProductBrandId" ColumnName="ProductBrandId" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductsColors">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductsColors">
+        <MappingFragment StoreEntitySet="tbl_ProductsColors">
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductColorId" ColumnName="ProductColorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductsGender">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ProductsGender">
+        <MappingFragment StoreEntitySet="tbl_ProductsGender">
+          <ScalarProperty Name="PGGenderId" ColumnName="PGGenderId" />
+          <ScalarProperty Name="PGProductId" ColumnName="PGProductId" />
+          <ScalarProperty Name="PGId" ColumnName="PGId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SalesTaxRates">
+      <EntityTypeMapping TypeName="ClothModel.tbl_SalesTaxRates">
+        <MappingFragment StoreEntitySet="tbl_SalesTaxRates">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="SalesTaxLastUpdateDate" ColumnName="SalesTaxLastUpdateDate" />
+          <ScalarProperty Name="SalesTaxLastUpdatedBy" ColumnName="SalesTaxLastUpdatedBy" />
+          <ScalarProperty Name="SalesTaxCreatedDate" ColumnName="SalesTaxCreatedDate" />
+          <ScalarProperty Name="SalesTaxCreatedBy" ColumnName="SalesTaxCreatedBy" />
+          <ScalarProperty Name="SalesTaxDescription" ColumnName="SalesTaxDescription" />
+          <ScalarProperty Name="SalesTaxSector" ColumnName="SalesTaxSector" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SalesTaxRatesUpdation">
+      <EntityTypeMapping TypeName="ClothModel.tbl_SalesTaxRatesUpdation">
+        <MappingFragment StoreEntitySet="tbl_SalesTaxRatesUpdation">
+          <ScalarProperty Name="SalesTaxLastUpdationDate" ColumnName="SalesTaxLastUpdationDate" />
+          <ScalarProperty Name="SalesTaxModifiedBy" ColumnName="SalesTaxModifiedBy" />
+          <ScalarProperty Name="SalesTaxSector" ColumnName="SalesTaxSector" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="SalesTaxUpdationId" ColumnName="SalesTaxUpdationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Screens">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Screens">
+        <MappingFragment StoreEntitySet="tbl_Screens">
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ScreensToGroup">
+      <EntityTypeMapping TypeName="ClothModel.tbl_ScreensToGroup">
+        <MappingFragment StoreEntitySet="tbl_ScreensToGroup">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="GroupScreenId" ColumnName="GroupScreenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_StorePayment">
+      <EntityTypeMapping TypeName="ClothModel.tbl_StorePayment">
+        <MappingFragment StoreEntitySet="tbl_StorePayment">
+          <ScalarProperty Name="StorePaymentInsertedBy" ColumnName="StorePaymentInsertedBy" />
+          <ScalarProperty Name="StorePaymentDate" ColumnName="StorePaymentDate" />
+          <ScalarProperty Name="StorePayment" ColumnName="StorePayment" />
+          <ScalarProperty Name="StorePaymentToDate" ColumnName="StorePaymentToDate" />
+          <ScalarProperty Name="StorePaymentFromDate" ColumnName="StorePaymentFromDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StorePaymentId" ColumnName="StorePaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Stores">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Stores">
+        <MappingFragment StoreEntitySet="tbl_Stores">
+          <ScalarProperty Name="SotreAddress" ColumnName="SotreAddress" />
+          <ScalarProperty Name="StoreContact" ColumnName="StoreContact" />
+          <ScalarProperty Name="StorePostCode" ColumnName="StorePostCode" />
+          <ScalarProperty Name="StoreCity" ColumnName="StoreCity" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="BillingTermId" ColumnName="BillingTermId" />
+          <ScalarProperty Name="StoreStatusUpdatedDate" ColumnName="StoreStatusUpdatedDate" />
+          <ScalarProperty Name="StoreStatusUpdatedby" ColumnName="StoreStatusUpdatedby" />
+          <ScalarProperty Name="StoreStatusComment" ColumnName="StoreStatusComment" />
+          <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+          <ScalarProperty Name="StoreLogo" ColumnName="StoreLogo" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="StoreDomainName" ColumnName="StoreDomainName" />
+          <ScalarProperty Name="StoreOwnerEmail" ColumnName="StoreOwnerEmail" />
+          <ScalarProperty Name="StoreOwnerContact" ColumnName="StoreOwnerContact" />
+          <ScalarProperty Name="StoreOwnerName" ColumnName="StoreOwnerName" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Templates">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Templates">
+        <MappingFragment StoreEntitySet="tbl_Templates">
+          <ScalarProperty Name="TemplateLogoHeight" ColumnName="TemplateLogoHeight" />
+          <ScalarProperty Name="TemplateLogoWidth" ColumnName="TemplateLogoWidth" />
+          <ScalarProperty Name="TemplatePicture" ColumnName="TemplatePicture" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="ClothModel.tbl_Users">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="UserIdentityInformation" ColumnName="UserIdentityInformation" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserLastModifiedDate" ColumnName="UserLastModifiedDate" />
+          <ScalarProperty Name="UserLastModifiedBy" ColumnName="UserLastModifiedBy" />
+          <ScalarProperty Name="UserCreatedDate" ColumnName="UserCreatedDate" />
+          <ScalarProperty Name="UserCreatedBy" ColumnName="UserCreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UsersUpdation">
+      <EntityTypeMapping TypeName="ClothModel.tbl_UsersUpdation">
+        <MappingFragment StoreEntitySet="tbl_UsersUpdation">
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="UserIdentityInformation" ColumnName="UserIdentityInformation" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserLastModifiedDate" ColumnName="UserLastModifiedDate" />
+          <ScalarProperty Name="UserLastModifiedBy" ColumnName="UserLastModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserUpdationId" ColumnName="UserUpdationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_ProductSearch" FunctionName="ClothModel.Store.SP_ProductSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_ProductSearch_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductBrandId" ColumnName="ProductBrandId" />
+          <ScalarProperty Name="ProductUnitPrice" ColumnName="ProductUnitPrice" />
+          <ScalarProperty Name="ProductPriceDescription" ColumnName="ProductPriceDescription" />
+          <ScalarProperty Name="ProductInStock" ColumnName="ProductInStock" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductInsertedBy" ColumnName="ProductInsertedBy" />
+          <ScalarProperty Name="ProductInsertedDate" ColumnName="ProductInsertedDate" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="ProductIsFeatured" ColumnName="ProductIsFeatured" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SearchProduct" FunctionName="ClothModel.Store.SP_SearchProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ClothModel.SP_SearchProduct_Result">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+          <ScalarProperty Name="ProductUnitPrice" ColumnName="ProductUnitPrice" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductSale" ColumnName="ProductSale" />
+          <ScalarProperty Name="ProductPriceDescription" ColumnName="ProductPriceDescription" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductIsFeatured" ColumnName="ProductIsFeatured" />
+          <ScalarProperty Name="ProductInStock" ColumnName="ProductInStock" />
+          <ScalarProperty Name="ProductInsertedDate" ColumnName="ProductInsertedDate" />
+          <ScalarProperty Name="ProductInsertedBy" ColumnName="ProductInsertedBy" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductBrandId" ColumnName="ProductBrandId" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

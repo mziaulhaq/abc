@@ -1,0 +1,126 @@
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.pdb
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.csprojResolveAssemblyReference.cache
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.csprojResolveAssemblyReference.cache
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\AjaxControlToolkit.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\Microsoft.WindowsAzure.Storage.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\HtmlAgilityPack.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\AjaxMin.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\Microsoft.WindowsAzure.Storage.xml
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\HtmlAgilityPack.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\HtmlAgilityPack.xml
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\ar\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\cs\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\de\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\es\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\fr\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\he\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\hi\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\it\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\ja\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\ko\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\nl\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\pt\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\ru\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\tr-TR\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\zh-CHS\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceUtilities\bin\Release\zh-CHT\AjaxControlToolkit.resources.dll
+G:\projects\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.csprojResolveAssemblyReference.cache
+G:\projects\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.dll
+G:\projects\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.csprojResolveAssemblyReference.cache
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceDAL.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\Excel.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EntityFramework.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceDAL.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\Excel.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EntityFramework.xml
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\AjaxControlToolkit.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\AjaxMin.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ar\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\cs\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\de\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\es\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\fr\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\he\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\hi\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\it\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ja\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ko\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\nl\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\pt\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ru\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\tr-TR\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\zh-CHS\AjaxControlToolkit.resources.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\zh-CHT\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceDAL.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\Excel.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ICSharpCode.SharpZipLib.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EntityFramework.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\AjaxMin.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceDAL.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\Excel.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EntityFramework.xml
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ar\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\cs\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\de\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\es\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\fr\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\he\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\hi\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\it\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ja\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ko\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\nl\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\pt\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ru\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\tr-TR\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\zh-CHS\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\zh-CHT\AjaxControlToolkit.resources.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.csprojResolveAssemblyReference.cache
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\AjaxControlToolkit.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceUtilities.pdb
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\AjaxControlToolkit.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceDAL.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\Excel.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EntityFramework.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\AjaxMin.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EcommerceDAL.pdb
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\Excel.pdb
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\EntityFramework.xml
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ar\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\cs\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\de\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\es\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\fr\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\he\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\hi\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\it\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ja\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ko\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\nl\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\pt\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\ru\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\tr-TR\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\zh-CHS\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\bin\Release\zh-CHT\AjaxControlToolkit.resources.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.csprojResolveAssemblyReference.cache
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceUtilities\obj\Release\EcommerceUtilities.pdb

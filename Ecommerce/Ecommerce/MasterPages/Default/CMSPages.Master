@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CMSPages.Master.cs" Inherits="Ecommerce.CMSPages" %>
+
+<%@ Register Src="~/MasterPages/Default/UserControls/HeaderMenu.ascx" TagPrefix="uc1" TagName="HeaderMenu" %>
+<%@ Register Src="~/MasterPages/Default/UserControls/UserControlScripts.ascx" TagPrefix="uc1" TagName="UserControlScripts" %>
+<%@ Register Src="~/MasterPages/Default/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%= StoreName %></title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+
+    </asp:PlaceHolder>
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" />
+    <link href="<%=VirtualPathUtility.ToAbsolute("~/Content/slimbox/slimbox2.css")%>" rel="stylesheet" />
+    <webopt:BundleReference runat="server" Path="~/Content/bootstrap.min.css"></webopt:BundleReference>
+    <webopt:BundleReference runat="server" Path="~/ContentV2/css/style.css"></webopt:BundleReference>
+    <webopt:BundleReference runat="server" Path="~/ContentV2/css/styleV2.css"></webopt:BundleReference>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+</head>
+<body>
+    <form runat="server">
+        <uc1:UserControlScripts runat="server" ID="UserControlScripts" />
+        <div class="container-fluid">
+            <header>
+                <uc1:HeaderMenu runat="server" ID="HeaderMenu" />
+            </header>
+
+            <section class="clearall row-fluid whitebackground paddingtwentyTop">
+                <article class="offset1 well contentArticle span10">
+                    <asp:ContentPlaceHolder runat="server" ID="Contents"></asp:ContentPlaceHolder>
+
+                </article>
+                <div class="clearall"></div>
+            </section>
+
+        </div>
+        <uc1:CtrlFooter runat="server" ID="CtrlFooter" />
+    </form>
+</body>
+</html>

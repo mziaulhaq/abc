@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EcommerceGeneral.Master.cs" Inherits="Ecommerce.EcommerceManager.MasterPages.EcommerceGeneral" %>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Lahore Cloth Admin</title>
+    <%--<link href="../../Content/ZStyle.css" rel="stylesheet" />--%>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/Manager" />
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+
+        <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=272931&clcid=0x409 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="jquery.ui.combined" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Path="~/Scripts/jquery.dcmegamenu.1.3.3.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.hoverIntent.minified.js" />
+                <asp:ScriptReference Path="~/Scripts/DynamicMessages.js" />
+            </Scripts>
+        </ajaxToolkit:ToolkitScriptManager>
+
+
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">
+                        <a runat="server" href="~/">Lahore Cloth Admin Console</a>
+                    </p>
+                </div>
+                <asp:HyperLink runat="server" ID="hlLogout" Text="Logout" ImageUrl="~/Images/logout.gif" Style="float: right" NavigateUrl="~/EcommerceManager/EcomerceHome.aspx?cmd=logout"></asp:HyperLink>
+            </div>
+        </header>
+
+        <div class="clear-fix"></div>
+        <div id="body">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <asp:UpdatePanel ID="MainPanel" runat="server" RenderMode="Inline">
+                <ContentTemplate>
+                    <section class="content-wrapper main-content clear-fix" style="max-width:95%">
+
+                        <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                    </section>
+                </ContentTemplate>
+
+            </asp:UpdatePanel>
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                <ProgressTemplate>
+                    <div id="divUpdateProgress" style="display: none">
+                        <img id="imgUpdateProgress" src="../Images/updateProgress.gif" />
+                    </div>
+                </ProgressTemplate>
+
+            </asp:UpdateProgress>
+
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; <%= DateTime.Now.Year %> - Lahore Cloth </p>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script type="text/javascript">
+        $("#divUpdateProgress").css("display", "block");
+        $('#TopMyMenuControl  ul').addClass("mega-menu");
+        $('#TopMyMenuControl  ul').attr("id", "mega-menu");
+        $('#TopMyMenuControl  a[href="#"]').css("cursor", "context-menu !important");
+        $('#TopMyMenuControl a[href="#"]').removeAttr("onclick");
+        $('#TopMyMenuControl a[href="#"]').click(function (e) {
+            e.preventDefault();
+        });
+        jQuery(document).ready(function ($) {
+            jQuery('#mega-menu').dcMegaMenu();
+        });
+
+    </script>
+</body>
+</html>

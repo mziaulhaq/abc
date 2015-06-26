@@ -1,0 +1,376 @@
+﻿@font-face
+{
+font-family: myHeadingFont;
+src: url('fonts/Delphin Regular.ttf')
+}
+.Red {
+    color: #ff0081;
+}
+.Blue {
+    color: #3e8cba;
+}
+.BlueBackground {
+    background-color: #3e8cba !important;
+    background-image: none;
+}
+.title {
+    font-size: 24px;
+    font-family: myHeadingFont;
+}
+.TransparentBackground {
+    background-color: transparent;
+    border: 0 transparent;
+}
+.NavBackground {
+    background-color: #268bc3;
+    background-image: none;
+    border: 1px #268bc3 solid;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#268bc3', endColorstr='#268bc3', GradientType=0);
+    border-radius: 5px;
+}
+ul.nav li a {
+    color: white !important;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+}
+ul.nav li a.nohover {
+    color: black !important;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+}
+.footerSection ul {
+    width: 150px !important;
+}
+.footerSection ul li a {
+    color: #737373;
+}
+ul.nav li a:hover {
+    /*color: white !important;*/
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    background-color: #7ba61b !important;
+}
+ul.nav li a.nohover:hover {
+    /*color: white !important;*/
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    background-color: transparent !important;
+}
+ul.nav li a.active {
+    color: white !important;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    background-color: #97cc24 !important;
+}
+ul.nav li.Single {
+  padding: 10px 2px 10px;
+}
+ul.fontSmall {
+    margin-right: 20px !important;
+}
+ul.fontSmall li, ul.fontSmall li a {
+    font-size: 10px;
+    font-weight: normal;
+    -webkit-text-shadow: none !important ;
+    text-shadow: none !important ;
+ }
+ul.fontSmall li a {
+    padding: 10px 5px 10px !important;
+}
+ul.fontSmall li a img {
+    display: inline !important;
+    margin-left: 2px;
+}
+.greenbackground,.greenbackground:hover {
+    background-color: #95ca22 !important;
+    background-image: none;
+}
+.whiteColor, .whiteColor:hover {
+    color: white;
+}
+.Featuredheader {
+    height: 322px;
+    padding: 0;
+    position: relative;
+}
+.whitebackground {
+    background-color: #ffffff;
+}
+.leftArticle {
+  background-color: #eeeeee;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(#ffffff));
+  background: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+  background: -moz-linear-gradient(top, #ffffff, #eeeeee);
+  background: -ms-linear-gradient(top, #ffffff, #eeeeee);
+  background: -o-linear-gradient(top, #ffffff, #eeeeee);
+ }
+.wellWithOutPadding {
+margin-bottom: 20px;
+background-color: #F5F5F5;
+border: 1px solid #E3E3E3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+td.well {
+    display: block;
+    }
+.InlineImage {
+    display: inline !important;
+}
+.InlineBlock {
+    display: inline-block;
+}
+.contentArticle {
+    background-color: #f7f7f7;
+}
+.footerColor {
+    color: #737373;
+}
+.listIconNone {
+    list-style-type: none;
+}
+#trImages ul li {
+    list-style-type: none;
+    float: left;
+    width: 160px;
+    height: 160px;
+    margin: 5px;
+}
+.paddingtwentyTop {
+    padding-top: 30px;
+}
+.marginZero {
+    margin: 0;
+}
+.paddingZero {
+    padding: 0;
+}
+.LargeFont {
+    font-size: 18px;
+}
+.CategoryLists li{
+    height: 30px;
+    font-size: 13px;
+    color:#232323;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dadada;
+}
+.commontitle {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dadada;
+}
+.marginTopTwenty {
+    margin-top: 20px;
+}
+.marginBottomTwenty {
+    margin-bottom: 20px;
+}
+.paddingRightTwenty {
+    padding-left: 40px;
+}
+.ShopNow,.ShopNow:hover {
+    background: #90cf0f url(../images/Arrow.png) 90% 50% no-repeat !important;
+    padding-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.marginOfTen {
+    margin: 10px;
+}
+.clearall {
+    clear: both;
+}
+html,body  {
+    height: 100%;
+}
+html > body .carousel-inner img {
+    width: 100%;
+    height: 322px;
+    /*max-height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    min-width: 100%;*/ 
+}
+.item {
+    overflow: hidden;
+}
+.PositionRelative {
+    position: relative;    
+}
+.PositionRelative > img {
+    position: relative;
+}
+.divUpdateProgress {
+    /*display: none;*/
+    position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 0%; /* makes the div span all the way across the viewing area */
+    top: 0%; /* makes the div span all the way across the viewing area */
+    background-color: black;
+    -moz-opacity: 0.7; /* makes the div transparent, so you have a cool overlay effect */
+    opacity: .70;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 99990; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+}
+.imgUpdateProgress {
+    position: absolute;
+    top: 45%;
+    right:45%;
+    margin: 0 auto;
+    z-index: 99999;
+}
+.OverLaySpan {
+    position: absolute;
+    height: 15%;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    width: 130px;
+    background-color: black;
+    -moz-opacity: .85;
+    opacity: .85;
+    filter: alpha(opacity=90);
+    z-index: 100;
+    color: #95ca22;
+}
+span > label , span > input[type="radio"] {
+    display: inline;
+   line-height: 100%;
+    vertical-align: middle;
+}
+span > label {
+    margin-right: 10px;
+}
+span > input[type="radio"] {
+    margin-right: 3px;
+}
+.MakeFixed {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    width: 600px !important;
+   }
+.TableWithNoBorder , .TableWithNoBorder tr , .TableWithNoBorder th, .TableWithNoBorder td{
+  border: 0;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+ .TableWithNoBorder th, .TableWithNoBorder td {
+     padding: 20px;
+    }
+ .NoBorder,.NoBorder tr {
+     border-radius: 0;
+ }
+ .TableTdWithPadding th, .TableTdWithPadding td {
+     padding: 20px;
+    }
+
+
+
+
+.tblDropDown {
+    width: 100%;
+    margin: 15px 0px;
+}
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+}
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+}
+.navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+}
+.navbar .sub-menu:after {
+    border-top: 6px solid transparent;
+    border-left: none;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    left: 10px;
+    top: 11px;
+    left: -6px;
+}
+.auto-style1 {
+    width: 100%;
+}
+.auto-style1 tr {
+    height: 30px;
+}
+.auto-style1 .well {
+    padding: 5px;
+    margin: 0px;
+    display: block;
+    width: 100%;
+}
+.DisablePagingHyperLink {
+    color: gray;
+    text-decoration: none;
+
+}
+.EnablePagingHyperLink {
+    text-decoration: underline;
+}
+.DisablePagingHyperLink:hover {
+    color: gray;
+    text-decoration: none;
+}
+.EnablePagingHyperLink:hover {
+    text-decoration: none;
+}
+@media (max-width: 767px) {
+.paddingRightTwenty {
+       padding: 0;
+}
+.ShopNow,.ShopNow:hover {
+       background: #90cf0f;
+}
+.OverLaySpan {
+    position: absolute;
+    height: 15%;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    width: 130px;
+    background-color: black;
+    -moz-opacity: .85;
+    opacity: .85;
+    filter: alpha(opacity=90);
+    z-index: 100;
+    color: #95ca22;  
+  }
+}

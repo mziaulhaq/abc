@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.Master.cs" Inherits="Ecommerce.IndexMaster" %>
+<%@ Register Src="~/MasterPages/Default/UserControls/HeaderMenu.ascx" TagPrefix="uc1" TagName="HeaderMenu" %>
+<%@ Register Src="~/MasterPages/Default/UserControls/UserControlScripts.ascx" TagPrefix="uc1" TagName="UserControlScripts" %>
+<%--<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="aspx" %>--%>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%= StoreName %></title>
+    
+    <asp:PlaceHolder runat="server">
+        
+
+    </asp:PlaceHolder>
+   <%-- The following commented files will be used when optimize and asp.net bundles not working --%>
+   <%-- <link href="<%= VirtualPathUtility.ToAbsolute(" ~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ManagerSite.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ManagerStylishTable.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ManagerWizardControl.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/dcmegamenu.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/skins/grey.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ZStyle.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.core.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.resizable.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.selectable.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.accordion.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.autocomplete.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.button.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.dialog.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.slider.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.tabs.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.datepicker.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.progressbar.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.theme.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/jquery-ui.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/slimbox/slimbox2.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/jquery.bxslider.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/style.css") %>" rel="stylesheet" />--%>
+     <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/bootstrap.min.css"></webopt:BundleReference>
+    <webopt:BundleReference runat="server" Path="~/Content/jquery.bxslider.css"></webopt:BundleReference>
+    <link href="<%=VirtualPathUtility.ToAbsolute("~/Content/slimbox/slimbox2.css")%>" rel="text/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/style.css"></webopt:BundleReference>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" /> 
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    
+</head>
+<body>
+    
+    <form runat="server">
+        <uc1:UserControlScripts runat="server" id="UserControlScripts" />
+
+        <div class="container-fluid">
+            <header>
+                <uc1:HeaderMenu runat="server" id="HeaderMenu" />
+
+                <div class="row-fluid">
+                    <div class="navbar well span10 offset1 hidden-phone Featuredheader">
+                        <div id="myCarousel" class="carousel">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <asp:ListView runat="server"  ID="lstcarousel">
+                                    <ItemTemplate>
+                                        <div class="item">
+                                            <asp:HyperLink runat="server" ID="hypLinkBanner" NavigateUrl='<%# string.Format("~/ProductDetail.aspx?PId={0}",Eval("ProductId").ToString()) %>' >
+                                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# BindBannerImages(Eval("BannerImage").ToString()) %>' AlternateText="BannerImage" CssClass="table-bordered" />
+                                            </asp:HyperLink>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:ListView>
+                            </div>
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                            </div>
+                        </div>
+                        <div class="clearall"></div>
+
+                    </div>
+            </header>
+            <asp:ContentPlaceHolder runat="server" ID="Contents"></asp:ContentPlaceHolder>
+        </div>
+        
+        <script type="text/javascript">
+            $('.carousel').carousel({
+                interval: 5000,
+                auto: true
+            });
+            $('.carousel-inner > div:first-child').addClass("active");
+          
+                //Handles menu drop down
+           
+           
+        </script>
+    </form>
+</body>
+</html>

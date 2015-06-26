@@ -1,0 +1,48 @@
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll.config
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.pdb
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.xml
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.csprojResolveAssemblyReference.cache
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll.config
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.xml
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.csprojResolveAssemblyReference.cache
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.pdb
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll.config
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.pdb
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.dll
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.xml
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.csprojResolveAssemblyReference.cache
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.dll
+G:\projects\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll.config
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.xml
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.csprojResolveAssemblyReference.cache
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll.config
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.xml
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.csprojResolveAssemblyReference.cache
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.pdb
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll.config
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EcommerceDAL.pdb
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\bin\Release\EntityFramework.xml
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.csprojResolveAssemblyReference.cache
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\EcommerceDAL\obj\Release\EcommerceDAL.pdb

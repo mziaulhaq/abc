@@ -1,0 +1,141 @@
+﻿.topHeaderDivs {
+    float: left;
+    margin-top: 17px;
+    margin-left: 29px;
+}
+
+.topHeaderContent {
+    float: left;
+    margin-left: 40px;
+    font-family: verdana;
+    font-size: 8pt;
+    /*color: whitesmoke !important;*/
+}
+
+.loginButton {
+    background: #90cf0f url('../img/login16x16.png') no-repeat 90% 50% !important;
+    padding-right: 40px;
+    border: 1px solid greenyellow;
+}
+
+
+.login-box-body {
+    background: #cecece;
+    padding: 10px 20px 11px 20px;
+    color: #444;
+    border-top: 0;
+    color: #555;
+    opacity: 0.8;
+    background-color: white;
+}
+
+.login-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+
+.productImageSize {
+    height: 200px;
+    width: 176px;
+}
+
+span#cbListBrand > label {
+    margin-left: 15px;
+}
+
+span#cbListColor > label {
+    margin-left: 15px;
+}
+
+span#cbListMetarial > label {
+    margin-left: 15px;
+}
+
+
+span#cbListType > label {
+    margin-left: 15px;
+}
+
+
+span#cbListGender > label {
+    margin-left: 15px;
+}
+
+.scrollingDiv {
+    overflow-y: scroll;
+    padding-left: 8px;
+    padding-bottom: 12px;
+}
+
+.outerDivSearch {
+    border: 1px solid darkgray;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+
+.SearchButton, .SearchButton:hover {
+    background: #ff0081 url('../../Images/Arrow.png') no-repeat 90% 50% !important;
+    padding-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+    .SearchButton, .SearchButton:hover {
+        background: #ff0081;
+    }
+/*=============== DashBoard =====================*/
+.DashIcon {
+    text-align: center;
+    margin-right: 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+div.bx-wrapper > div.bx-viewport {
+    height: 140px;
+}
+
+    div.bx-wrapper > div.bx-viewport > ul.bxslider > li.pull-left, li.bx-clone {
+        width: 230px;
+    }
+
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}

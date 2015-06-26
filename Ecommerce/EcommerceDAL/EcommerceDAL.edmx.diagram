@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a19eab817bd485895299c87b9312cf3" Name="Diagram1" ZoomLevel="65" ShowGrid="false">
+        <EntityTypeShape EntityType="ClothModel.tbl_BillingTerm" Width="1.5" PointX="0.75" PointY="44.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Brands" Width="1.5" PointX="8.25" PointY="38" />
+        <EntityTypeShape EntityType="ClothModel.tbl_BrandsUpdation" Width="1.5" PointX="10.5" PointY="45.375" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Categories" Width="1.5" PointX="5.25" PointY="32.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_CategoriesUpdationRecord" Width="1.5" PointX="7.5" PointY="33.25" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Colors" Width="1.5" PointX="5.25" PointY="56.5" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Country" Width="1.5" PointX="0.75" PointY="39.125" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Customers" Width="1.5" PointX="5.25" PointY="37.75" />
+        <EntityTypeShape EntityType="ClothModel.tbl_GenderCategories" Width="1.5" PointX="5.25" PointY="49.25" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Groups" Width="1.5" PointX="8.25" PointY="43.375" />
+        <EntityTypeShape EntityType="ClothModel.tbl_HomePageBanners" Width="1.5" PointX="12.75" PointY="35.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Metarial" Width="1.5" PointX="13.5" PointY="55" />
+        <EntityTypeShape EntityType="ClothModel.tbl_NextStorePaymentSchedule" Width="1.5" PointX="15.75" PointY="34.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Orders" Width="1.5" PointX="18.75" PointY="39.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_OrdersUpdation" Width="1.5" PointX="21" PointY="41.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Packages" Width="1.5" PointX="0.75" PointY="36" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Pages" Width="1.5" PointX="18.75" PointY="35.25" />
+        <EntityTypeShape EntityType="ClothModel.tbl_PagesUpdation" Width="1.5" PointX="21" PointY="37.375" />
+        <EntityTypeShape EntityType="ClothModel.tbl_PaymentMethods" Width="1.5" PointX="16.5" PointY="31.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductCategories" Width="1.5" PointX="15.75" PointY="42.25" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductDynamicAttributes" Width="1.5" PointX="15.75" PointY="38.75" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductDynamicCategories" Width="1.5" PointX="5.25" PointY="29.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductImages" Width="1.5" PointX="15.75" PointY="66" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductMetarialInfo" Width="1.5" PointX="15.75" PointY="45.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Products" Width="1.5" PointX="13.5" PointY="43.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductsColors" Width="1.5" PointX="15.75" PointY="52.25" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ProductsGender" Width="1.5" PointX="15.75" PointY="48.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_SalesTaxRates" Width="1.5" PointX="5.25" PointY="52.125" />
+        <EntityTypeShape EntityType="ClothModel.tbl_SalesTaxRatesUpdation" Width="1.5" PointX="7.5" PointY="52.75" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Screens" Width="1.5" PointX="11.25" PointY="32.25" />
+        <EntityTypeShape EntityType="ClothModel.tbl_ScreensToGroup" Width="1.5" PointX="13.5" PointY="39.875" />
+        <EntityTypeShape EntityType="ClothModel.tbl_StorePayment" Width="1.5" PointX="5.25" PointY="43.125" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Stores" Width="1.5" PointX="3" PointY="35.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Templates" Width="1.5" PointX="0.75" PointY="42" />
+        <EntityTypeShape EntityType="ClothModel.tbl_Users" Width="1.5" PointX="10.5" PointY="37.625" />
+        <EntityTypeShape EntityType="ClothModel.tbl_UsersUpdation" Width="1.5" PointX="12.75" PointY="50.75" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Stores_tbl_BillingTerm" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Brands_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Brands_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Brands_tbl_Users1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_BrandsUpdation_tbl_Brands" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Products_tbl_Brands" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Categories_tbl_Categories" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Categories_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_CategoriesUpdationRecord_tbl_Categories" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductCategories_tbl_Categories" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Colors_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductsColors_tbl_Colors" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Customers_tbl_Country1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Stores_tbl_Country" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Customers_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_GenderCategories_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductsGender_tbl_GenderCategories" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Groups_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Groups_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ScreensToGroup_tbl_Groups" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Users_tbl_Groups" />
+        <AssociationConnector Association="ClothModel.FK_tbl_HomePageBanners_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_HomePageBanners_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Metarial" />
+        <AssociationConnector Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Stores1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_NextStorePaymentSchedule_tbl_Users1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Orders_tbl_PaymentMethods" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Orders_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Orders_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_OrdersUpdation_tbl_Orders" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Stores_tbl_Packages" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Pages_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Pages_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Pages_tbl_Users1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_PagesUpdation_tbl_Pages" />
+        <AssociationConnector Association="ClothModel.FK_tbl_PagesUpdation_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductCategories_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_ProductDynamicCategories" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductDynamicAttributes_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductDynamicCategories_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductImages_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductMetarialInfo_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Products_tbl_SalesTaxRates" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Products_tbl_SalesTaxRates1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductsColors_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ProductsGender_tbl_Products" />
+        <AssociationConnector Association="ClothModel.FK_tbl_SalesTaxRates_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_SalesTaxRatesUpdation_tbl_SalesTaxRates" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ScreensToGroup_tbl_Screens" />
+        <AssociationConnector Association="ClothModel.FK_tbl_ScreensToGroup_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_StorePayment_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Stores_tbl_Templates" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Stores_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Users_tbl_Stores" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Users_tbl_Users" />
+        <AssociationConnector Association="ClothModel.FK_tbl_Users_tbl_Users1" />
+        <AssociationConnector Association="ClothModel.FK_tbl_UsersUpdation_tbl_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

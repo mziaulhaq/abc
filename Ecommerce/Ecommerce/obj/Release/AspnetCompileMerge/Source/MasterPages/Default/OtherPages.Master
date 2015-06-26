@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="OtherPages.Master.cs" Inherits="Ecommerce.OtherPages" %>
+
+<%@ Register Src="~/MasterPages/Default/UserControls/HeaderMenu.ascx" TagPrefix="uc1" TagName="HeaderMenu" %>
+ <%@ Register Src="~/MasterPages/Default/UserControls/UserControlScripts.ascx" TagPrefix="uc1" TagName="UserControlScripts" %>
+<%@ Register Src="~/MasterPages/Default/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%= StoreName %></title>
+    <%-- The following commented files will be used when optimize and asp.net bundles not working --%>
+   <%-- <link href="<%= VirtualPathUtility.ToAbsolute(" ~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ManagerSite.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ManagerStylishTable.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ManagerWizardControl.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/dcmegamenu.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/skins/grey.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/ZStyle.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.core.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.resizable.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.selectable.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.accordion.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.autocomplete.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.button.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.dialog.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.slider.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.tabs.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.datepicker.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.progressbar.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/base/jquery.ui.theme.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/themes/jquery-ui.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/slimbox/slimbox2.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/jquery.bxslider.css") %>" rel="stylesheet" />
+    <link href="<%= VirtualPathUtility.ToAbsolute("~/Content/style.css") %>" rel="stylesheet" />--%>
+     <meta charset="utf-8" />
+    
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+
+    </asp:PlaceHolder>
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/themes/base/css" /> 
+    <link href="<%=VirtualPathUtility.ToAbsolute("~/Content/slimbox/slimbox2.css")%>" rel="text/css" />
+     <webopt:BundleReference runat="server" Path="~/Content/bootstrap.min.css"></webopt:BundleReference>
+   <webopt:BundleReference runat="server" Path="~/Content/style.css"></webopt:BundleReference>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    </head>
+<body>
+    <form runat="server">
+     <uc1:UserControlScripts runat="server" id="UserControlScripts" />
+     <div class="container-fluid">
+            <header>
+            <uc1:HeaderMenu runat="server" ID="HeaderMenu" />
+        </header>
+        
+        <section class="clearall row-fluid whitebackground paddingtwentyTop">
+        <article class="offset1 well leftArticle span2 hidden-phone">
+            <p class="Red text-center LargeFont">Categories</p>
+            <ul class="unstyled CategoryLists">
+                <asp:ListView runat="server" ID="lvCategories">
+                    <ItemTemplate>
+                      <li><a href="ProductsInCategories.aspx?CatId=<%# Eval("CatId") %>"><%# Eval("CatName") %></a></li>  
+                    </ItemTemplate>
+                </asp:ListView>
+            </ul>
+        </article>
+        <article class="well contentArticle span8">
+             <asp:ContentPlaceHolder runat="server" ID="Contents"></asp:ContentPlaceHolder>
+          
+        </article>
+        <div class="clearall"></div>
+    </section>
+   
+    </div>
+        <uc1:CtrlFooter runat="server" ID="CtrlFooter" />
+    </form>
+</body>
+</html>

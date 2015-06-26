@@ -1,0 +1,29 @@
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+D:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
+D:\ProjectWork\Cloth Ecomerce\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+F:\Projects\EcommerceLast\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+F:\Projects\EcommerceLast\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+F:\Projects\EcommerceLast\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+F:\Projects\EcommerceLast\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+F:\Projects\EcommerceLast\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
+G:\projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+F:\Projects\Ecommerce Cloth latest\EcommerceLast\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
